@@ -5,7 +5,7 @@
         <CListGroup>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/allTatic.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/allTatic.lua"
               target="_blank"
             >
               allTatic.lua
@@ -13,7 +13,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/bet-boom.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/bet-boom.lua"
               target="_blank"
             >
               bet-boom.lua
@@ -21,7 +21,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/clean.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/clean.lua"
               target="_blank"
             >
               clean.lua
@@ -29,7 +29,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/forDuck.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/forDuck.lua"
               target="_blank"
             >
               forDuck.lua
@@ -37,7 +37,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/makecolor.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/makecolor.lua"
               target="_blank"
             >
               makecolor.lua
@@ -45,7 +45,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/new-style.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/new-style.lua"
               target="_blank"
             >
               new-style.lua
@@ -53,7 +53,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/newAI.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newAI.lua"
               target="_blank"
             >
               newAI.lua
@@ -61,7 +61,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/newStardy.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newStardy.lua"
               target="_blank"
             >
               newStardy.lua
@@ -69,7 +69,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/newVersion.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newVersion.lua"
               target="_blank"
             >
               newVersion.lua
@@ -77,7 +77,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/noCacularBet.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/noCacularBet.lua"
               target="_blank"
             >
               noCacularBet.lua
@@ -85,7 +85,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/risk.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/risk.lua"
               target="_blank"
             >
               risk.lua
@@ -93,7 +93,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/smartBet.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/smartBet.lua"
               target="_blank"
             >
               smartBet.lua
@@ -101,7 +101,7 @@
           </CListGroupItem>
           <CListGroupItem>
             <a
-              href="https://raw.githubusercontent.com/mhqb365/webdicebot-awesome-scripts/master/taticNew.lua"
+              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/taticNew.lua"
               target="_blank"
             >
               taticNew.lua
