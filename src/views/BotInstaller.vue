@@ -102,6 +102,17 @@
               line dobet() in your script
             </CAccordionBody>
           </CAccordionItem>
+
+          <CAccordionItem :item-key="5">
+            <CAccordionHeader>
+              Why stake.com or primedice.com show alert: "get new pair of seed"?
+            </CAccordionHeader>
+            <CAccordionBody>
+              Add 'resetseed()' function in to your script below dobet() line
+              with a condition. Example:
+              <pre>if (bets % 1000 = 0) then resetseed() end</pre>
+            </CAccordionBody>
+          </CAccordionItem>
         </CAccordion>
       </CCardBody>
     </CCard>
