@@ -277,7 +277,7 @@ export default {
         })
         this.isLoading = false
         // console.log(data)
-        alert(data)
+        this.notify(data)
       } catch (error) {
         this.isLoading = false
         // console.error(error)
