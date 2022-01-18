@@ -6,7 +6,11 @@
       </CButton>
     </router-link>
 
-    <CCard class="mb-4">
+    <CCard v-show="isLoading" class="mb-4">
+      <CCardBody> <CSpinner color="light" /> </CCardBody>
+    </CCard>
+
+    <CCard v-show="!isLoading" class="mb-4">
       <CCardBody>
         <CTable responsive>
           <CTableHead>
@@ -57,6 +61,7 @@ export default {
   moment,
   data() {
     return {
+      isLoading: false,
       items: 0,
     }
   },
@@ -66,11 +71,14 @@ export default {
   methods: {
     async getMyLicense() {
       try {
+        this.isLoading = true
         const { data } = await axios.get('/license/me')
         // console.log(data)
+        this.isLoading = false
         this.items = data
       } catch (error) {
         // console.error(error)
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (error.response.data.message == 'jwt expired')
           this.$router.push('/pages/login')
