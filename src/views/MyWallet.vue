@@ -1,6 +1,10 @@
 <template>
   <div>
-    <CCard class="mb-4 bg-primary text-white">
+    <CCard v-show="isLoading" class="mb-4 bg-primary text-white">
+      <CCardBody> <CSpinner color="light" /> </CCardBody>
+    </CCard>
+
+    <CCard v-show="!isLoading" class="mb-4 bg-primary text-white">
       <CCardBody>
         <h2>{{ balance }} TRX</h2>
 
@@ -45,7 +49,7 @@
     </CCard>
 
     <CNav variant="pills" role="tablist" class="mb-3">
-      <CNavItem variant="info">
+      <CNavItem>
         <CNavLink
           href="javascript:void(0);"
           :active="tabPaneActiveKey === 1"
@@ -55,8 +59,8 @@
             }
           "
         >
-          <CIcon name="cil-loop-circular" />
-          Transactions
+          <CIcon name="cil-arrow-circle-bottom" />
+          Deposit
         </CNavLink>
       </CNavItem>
 
@@ -70,12 +74,12 @@
             }
           "
         >
-          <CIcon name="cil-arrow-circle-bottom" />
-          Receive
+          <CIcon name="cil-arrow-circle-top" />
+          Withdraw
         </CNavLink>
       </CNavItem>
 
-      <CNavItem>
+      <CNavItem variant="info">
         <CNavLink
           href="javascript:void(0);"
           :active="tabPaneActiveKey === 3"
@@ -85,14 +89,78 @@
             }
           "
         >
-          <CIcon name="cil-arrow-circle-top" />
-          Send
+          <CIcon name="cil-loop-circular" />
+          Transactions
         </CNavLink>
       </CNavItem>
     </CNav>
 
     <CTabContent class="mb-4">
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
+        <CCard v-show="isLoading" class="mb-4">
+          <CCardBody class="text-center">
+            <CSpinner color="light" />
+          </CCardBody>
+        </CCard>
+
+        <CCard v-show="!isLoading" class="mb-4">
+          <CCardBody class="text-center">
+            <p>
+              Only send TRX to this address, 1 confirmation(s) required
+              <br />
+              We do not accept BEP20 from Binance
+            </p>
+
+            <QRCodeVue3
+              :value="address"
+              :width="200"
+              :height="200"
+              :dotsOptions="{
+                type: 'square',
+              }"
+              class="mb-3"
+            />
+
+            <span
+              class="copy"
+              v-clipboard:copy="address"
+              v-clipboard:success="onCopy"
+            >
+              {{ address }} &#x2750;
+            </span>
+          </CCardBody>
+        </CCard>
+      </CTabPane>
+
+      <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 2">
+        <CCard class="mb-4">
+          <CCardBody>
+            <div class="mb-3">
+              <CFormLabel>Receiving address</CFormLabel>
+              <CFormInput type="text" v-model="to" />
+            </div>
+
+            <p>
+              If receiving address not activated. An extra 1.1 TRX will be
+              deducted from your account to activate the receiving address
+            </p>
+
+            <div class="mb-3">
+              <CFormLabel>Withdraw amount</CFormLabel>
+              <CFormInput type="number" v-model="amount" />
+            </div>
+
+            <div class="d-grid gap-2">
+              <CButton color="primary" @click="send">
+                <CSpinner v-show="isLoading2" color="light" size="sm" />
+                Send
+              </CButton>
+            </div>
+          </CCardBody>
+        </CCard>
+      </CTabPane>
+
+      <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 3">
         <CCard>
           <CCardBody>
             <CTable responsive>
@@ -126,64 +194,6 @@
           </CCardBody>
         </CCard>
       </CTabPane>
-
-      <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 2">
-        <CCard class="mb-4">
-          <CCardBody class="text-center">
-            <p>
-              Only send TRX to this address, 1 confirmation(s) required
-              <br />
-              We do not accept BEP20 from Binance
-            </p>
-
-            <QRCodeVue3
-              :value="address"
-              :width="200"
-              :height="200"
-              :dotsOptions="{
-                type: 'square',
-              }"
-              class="mb-3"
-            />
-
-            <span
-              class="copy"
-              v-clipboard:copy="address"
-              v-clipboard:success="onCopy"
-            >
-              {{ address }} &#x2750;
-            </span>
-          </CCardBody>
-        </CCard>
-      </CTabPane>
-
-      <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 3">
-        <CCard class="mb-4">
-          <CCardBody>
-            <div class="mb-3">
-              <CFormLabel>Receiving account</CFormLabel>
-              <CFormInput type="text" v-model="to" />
-            </div>
-
-            <p>
-              If receiving account has not been activated. An extra 1.1 TRX will
-              be deducted from your account to activate the receiving account
-            </p>
-
-            <div class="mb-3">
-              <CFormLabel>Transfer amount</CFormLabel>
-              <CFormInput type="number" v-model="amount" />
-            </div>
-
-            <div class="d-grid gap-2">
-              <CButton color="primary" @click="send">
-                <CSpinner v-show="isLoading" color="light" size="sm" />
-                Send
-              </CButton>
-            </div>
-          </CCardBody>
-        </CCard>
-      </CTabPane>
     </CTabContent>
   </div>
 </template>
@@ -201,6 +211,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isLoading2: false,
       trx: {
         usd: 0,
         change24hr: 0,
@@ -240,13 +251,16 @@ export default {
     },
     async getWallet() {
       try {
+        this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
+        this.isLoading = false
         this.address = data.address
         this.balance = data.balance
         this.bandwidth = data.bandwidth
       } catch (error) {
         // console.error(error)
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (error.response.data.message == 'jwt expired')
           this.$router.push('/pages/login')
@@ -270,16 +284,16 @@ export default {
     async send(e) {
       e.preventDefault()
       try {
-        this.isLoading = true
+        this.isLoading2 = true
         const { data } = await axios.post('/user/wallet/send', {
           to: this.to,
           amount: this.amount,
         })
-        this.isLoading = false
+        this.isLoading2 = false
         // console.log(data)
         this.notify(data)
       } catch (error) {
-        this.isLoading = false
+        this.isLoading2 = false
         // console.error(error)
         this.notify(error.response.data.message)
         if (error.response.data.message == 'jwt expired')
@@ -293,13 +307,4 @@ export default {
 }
 </script>
 
-<style>
-.balance {
-  background: linear-gradient(140deg, #321fdb, #68a9d4 120%);
-  color: white;
-}
-
-.copy {
-  cursor: pointer;
-}
-</style>
+<style></style>

@@ -83,8 +83,4 @@ export default {
 }
 </script>
 
-<style>
-.copy {
-  cursor: pointer;
-}
-</style>
+<style></style>

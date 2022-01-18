@@ -9,4 +9,8 @@
 a {
   text-decoration: none;
 }
+
+.copy {
+  cursor: pointer;
+}
 </style>
