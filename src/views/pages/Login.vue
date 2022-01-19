@@ -40,6 +40,12 @@
                       <CButton v-else color="primary" class="px-4">
                         Login
                       </CButton>
+
+                      <vue-telegram-login
+                        mode="callback"
+                        telegram-login="webdicebot_xyz"
+                        @callback="yourCallbackFunction"
+                      />
                     </CCol>
                   </CRow>
                 </CForm>
@@ -54,6 +60,7 @@
 
 <script>
 import axios from 'axios'
+import { vueTelegramLogin } from 'vue-telegram-login'
 
 export default {
   name: 'Login',
@@ -69,6 +76,12 @@ export default {
     }
   },
   methods: {
+    yourCallbackFunction(user) {
+      // gets user as an input
+      // id, first_name, last_name, username,
+      // photo_url, auth_date and hash
+      console.log(user)
+    },
     async login(e) {
       // console.log(e)
       e.preventDefault()

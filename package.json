@@ -27,6 +27,7 @@
     "vue": "^3.2.23",
     "vue-router": "^4.0.12",
     "vue-sweetalert2": "^5.0.2",
+    "vue-telegram-login": "^2.1.0",
     "vue3-clipboard": "^1.0.0",
     "vuex": "^4.0.2"
   },
