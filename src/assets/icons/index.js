@@ -11,7 +11,7 @@ import {
   cilArrowCircleBottom,
   cilExternalLink,
   cilCode,
-  cilLoopCircular,
+  cilHistory,
 } from '@coreui/icons'
 
 export const iconsSet = Object.assign({
@@ -27,5 +27,5 @@ export const iconsSet = Object.assign({
   cilArrowCircleBottom,
   cilExternalLink,
   cilCode,
-  cilLoopCircular,
+  cilHistory,
 })

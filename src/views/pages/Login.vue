@@ -34,8 +34,10 @@
 
                   <CRow>
                     <CCol :xs="6">
-                      <CButton color="primary" class="px-4">
-                        <CSpinner v-show="isLoading" color="light" size="sm" />
+                      <CButton v-if="isLoading" disabled>
+                        <CSpinner size="sm" />
+                      </CButton>
+                      <CButton v-else color="primary" class="px-4">
                         Login
                       </CButton>
                     </CCol>

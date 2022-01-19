@@ -1,34 +1,15 @@
 <template>
   <div>
-    <CCard v-show="isLoading" class="mb-4 bg-primary text-white">
-      <CCardBody> <CSpinner color="light" /> </CCardBody>
-    </CCard>
-
-    <CCard v-show="!isLoading" class="mb-4 bg-primary text-white">
+    <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
-        <h2>{{ balance }} TRX</h2>
+        <CSpinner v-if="isLoading" color="light" />
 
-        <h6>${{ Number(balance * trx.usd).toFixed(2) }}</h6>
+        <template v-else>
+          <h2>{{ balance }} TRX</h2>
 
-        <CRow class="small mt-4">
-          <CCol>
-            <CBadge
-              color="light"
-              shape="rounded-pill"
-              v-c-tooltip="
-                'Transactions of triggering and creating smart contracts consume Energy, which can be obtained by freezing TRX'
-              "
-              class="copy text-dark"
-            >
-              ?
-            </CBadge>
-            Energy:
-            {{ bandwidth.energyLimit - bandwidth.energyUsed }}/{{
-              bandwidth.energyLimit
-            }}
-          </CCol>
+          <h6>${{ Number(balance * trx.usd).toFixed(2) }}</h6>
 
-          <CCol>
+          <p class="mt-4 mb-0 small">
             <CBadge
               color="light"
               shape="rounded-pill"
@@ -43,8 +24,8 @@
             {{ bandwidth.freeNetLimit - bandwidth.freeNetUsed }}/{{
               bandwidth.freeNetLimit
             }}
-          </CCol>
-        </CRow>
+          </p>
+        </template>
       </CCardBody>
     </CCard>
 
@@ -89,7 +70,7 @@
             }
           "
         >
-          <CIcon name="cil-loop-circular" />
+          <CIcon name="cil-history" />
           Transactions
         </CNavLink>
       </CNavItem>
@@ -97,43 +78,41 @@
 
     <CTabContent class="mb-4">
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
-        <CCard v-show="isLoading" class="mb-4">
+        <CCard>
           <CCardBody class="text-center">
-            <CSpinner color="light" />
-          </CCardBody>
-        </CCard>
+            <CSpinner v-if="isLoading" component="span" />
 
-        <CCard v-show="!isLoading" class="mb-4">
-          <CCardBody class="text-center">
-            <p>
-              Only send TRX to this address, 1 confirmation(s) required
-              <br />
-              We do not accept BEP20 from Binance
-            </p>
+            <template v-else>
+              <p>
+                Only send TRX to this address, 1 confirmation(s) required
+                <br />
+                We do not accept BEP20 from Binance
+              </p>
 
-            <QRCodeVue3
-              :value="address"
-              :width="200"
-              :height="200"
-              :dotsOptions="{
-                type: 'square',
-              }"
-              class="mb-3"
-            />
+              <QRCodeVue3
+                :value="address"
+                :width="200"
+                :height="200"
+                :dotsOptions="{
+                  type: 'square',
+                }"
+                class="mb-3"
+              />
 
-            <span
-              class="copy"
-              v-clipboard:copy="address"
-              v-clipboard:success="onCopy"
-            >
-              {{ address }} &#x2750;
-            </span>
+              <span
+                class="copy"
+                v-clipboard:copy="address"
+                v-clipboard:success="onCopy"
+              >
+                {{ address }} &#x2750;
+              </span>
+            </template>
           </CCardBody>
         </CCard>
       </CTabPane>
 
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 2">
-        <CCard class="mb-4">
+        <CCard>
           <CCardBody>
             <div class="mb-3">
               <CFormLabel>Receiving address</CFormLabel>
@@ -151,10 +130,11 @@
             </div>
 
             <div class="d-grid gap-2">
-              <CButton color="primary" @click="send">
-                <CSpinner v-show="isLoading2" color="light" size="sm" />
-                Send
+              <CButton v-if="isLoading2" disabled>
+                <CSpinner component="span" size="sm" aria-hidden="true" />
               </CButton>
+
+              <CButton v-else color="primary" @click="send"> Send </CButton>
             </div>
           </CCardBody>
         </CCard>
@@ -211,6 +191,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isFirstTime: true,
       isLoading2: false,
       trx: {
         usd: 0,
@@ -223,8 +204,6 @@ export default {
       to: '',
       amount: '0',
       bandwidth: {
-        energyLimit: 0,
-        energyUsed: 0,
         freeNetLimit: 0,
         freeNetUsed: 0,
       },
@@ -238,6 +217,7 @@ export default {
       await this.getWallet()
       this.getTransaction()
     }, 6e4)
+    this.isFirstTime = false
   },
   methods: {
     async getPriceTrx() {
@@ -251,7 +231,7 @@ export default {
     },
     async getWallet() {
       try {
-        this.isLoading = true
+        if (this.isFirstTime) this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
         this.isLoading = false

@@ -6,13 +6,11 @@
       </CButton>
     </router-link>
 
-    <CCard v-show="isLoading" class="mb-4">
-      <CCardBody> <CSpinner color="light" /> </CCardBody>
-    </CCard>
-
-    <CCard v-show="!isLoading" class="mb-4">
+    <CCard class="mb-4">
       <CCardBody>
-        <CTable responsive>
+        <CSpinner v-if="isLoading" component="span" aria-hidden="true" />
+
+        <CTable v-else responsive>
           <CTableHead>
             <CTableRow>
               <CTableHeaderCell scope="col">Time</CTableHeaderCell>

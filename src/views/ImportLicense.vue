@@ -12,7 +12,11 @@
         </div>
 
         <div class="d-grid gap-2">
-          <CButton color="primary" @click="importLicense">
+          <CButton v-if="isLoading" disabled>
+            <CSpinner size="sm" />
+          </CButton>
+
+          <CButton v-else color="primary" @click="importLicense">
             <CSpinner v-show="isLoading" color="light" size="sm" />
             Import
           </CButton>

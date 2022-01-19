@@ -14,10 +14,10 @@
         <p>Available balance: {{ balance }} TRX</p>
 
         <div class="d-grid gap-2">
-          <CButton color="primary" @click="buy">
-            <CSpinner v-show="isLoading" color="light" size="sm" />
-            Buy
+          <CButton v-if="isLoading" disabled>
+            <CSpinner size="sm" />
           </CButton>
+          <CButton v-else color="primary" @click="buy"> Buy </CButton>
         </div>
       </CCardBody>
     </CCard>
