@@ -2,30 +2,26 @@
   <div>
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
-        <CSpinner v-if="isLoading" color="light" />
+        <h2>{{ wallet.balance }} TRX</h2>
 
-        <template v-else>
-          <h2>{{ balance }} TRX</h2>
+        <h6>${{ Number(wallet.balance * priceTrx.usd).toFixed(2) }}</h6>
 
-          <h6>${{ Number(balance * trx.usd).toFixed(2) }}</h6>
-
-          <p class="mt-4 mb-0 small">
-            <CBadge
-              color="light"
-              shape="rounded-pill"
-              v-c-tooltip="
-                'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
-              "
-              class="copy text-dark"
-            >
-              ?
-            </CBadge>
-            Bandwidth:
-            {{ bandwidth.freeNetLimit - bandwidth.freeNetUsed }}/{{
-              bandwidth.freeNetLimit
-            }}
-          </p>
-        </template>
+        <p class="mt-4 mb-0 small">
+          <CBadge
+            color="light"
+            shape="rounded-pill"
+            v-c-tooltip="
+              'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
+            "
+            class="copy text-dark"
+          >
+            ?
+          </CBadge>
+          Bandwidth:
+          {{ wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed }}/{{
+            wallet.bandwidth.freeNetLimit
+          }}
+        </p>
       </CCardBody>
     </CCard>
 
@@ -80,33 +76,29 @@
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
         <CCard>
           <CCardBody class="text-center">
-            <CSpinner v-if="isLoading" component="span" />
+            <p class="small">
+              Only send TRX to this address, 1 confirmation(s) required
+              <br />
+              We do not accept BEP20 from Binance
+            </p>
 
-            <template v-else>
-              <p>
-                Only send TRX to this address, 1 confirmation(s) required
-                <br />
-                We do not accept BEP20 from Binance
-              </p>
+            <QRCodeVue3
+              :value="wallet.address"
+              :width="200"
+              :height="200"
+              :dotsOptions="{
+                type: 'square',
+              }"
+              class="mb-3"
+            />
 
-              <QRCodeVue3
-                :value="address"
-                :width="200"
-                :height="200"
-                :dotsOptions="{
-                  type: 'square',
-                }"
-                class="mb-3"
-              />
-
-              <span
-                class="copy"
-                v-clipboard:copy="address"
-                v-clipboard:success="onCopy"
-              >
-                {{ address }} &#x2750;
-              </span>
-            </template>
+            <span
+              class="copy"
+              v-clipboard:copy="wallet.address"
+              v-clipboard:success="onCopy"
+            >
+              {{ wallet.address }} &#x2750;
+            </span>
           </CCardBody>
         </CCard>
       </CTabPane>
@@ -119,7 +111,7 @@
               <CFormInput type="text" v-model="to" />
             </div>
 
-            <p>
+            <p class="small">
               If receiving address not activated. An extra 1.1 TRX will be
               deducted from your account to activate the receiving address
             </p>
@@ -130,8 +122,8 @@
             </div>
 
             <div class="d-grid gap-2">
-              <CButton v-if="isLoading2" disabled>
-                <CSpinner component="span" size="sm" aria-hidden="true" />
+              <CButton v-if="isLoading" disabled>
+                <CSpinner size="sm" />
               </CButton>
 
               <CButton v-else color="primary" @click="send"> Send </CButton>
@@ -191,56 +183,43 @@ export default {
   data() {
     return {
       isLoading: false,
-      isFirstTime: true,
-      isLoading2: false,
-      trx: {
-        usd: 0,
-        change24hr: 0,
-      },
       tabPaneActiveKey: 1,
-      balance: 0,
-      address: '',
-      transactions: [],
+      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {},
+      wallet: JSON.parse(localStorage.getItem('wallet')) || {},
       to: '',
       amount: '0',
-      bandwidth: {
-        freeNetLimit: 0,
-        freeNetUsed: 0,
-      },
+      transactions: [],
     }
   },
-  async created() {
-    this.getPriceTrx()
-    await this.getWallet()
+  created() {
     this.getTransaction()
-    setInterval(async () => {
-      await this.getWallet()
+    setInterval(() => {
+      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
+      this.wallet = JSON.parse(localStorage.getItem('wallet'))
       this.getTransaction()
     }, 6e4)
-    this.isFirstTime = false
   },
   methods: {
-    async getPriceTrx() {
-      try {
-        const { data } = await axios.get('/price')
-        // console.log(data)
-        this.trx = data.trx
-      } catch (error) {
-        // console.log(error)
-      }
+    onCopy() {
+      this.notify('Copy success')
     },
-    async getWallet() {
+    getAddress(address) {
+      return address.slice(0, 7) + '...' + address.slice(-4)
+    },
+    async send(e) {
+      e.preventDefault()
       try {
-        if (this.isFirstTime) this.isLoading = true
-        const { data } = await axios.get('/user/wallet')
+        this.isLoading = true
+        const { data } = await axios.post('/user/wallet/send', {
+          to: this.to,
+          amount: this.amount,
+        })
+        this.isLoading = false
         // console.log(data)
-        this.isLoading = false
-        this.address = data.address
-        this.balance = data.balance
-        this.bandwidth = data.bandwidth
+        this.notify(data)
       } catch (error) {
-        // console.error(error)
         this.isLoading = false
+        // console.error(error)
         this.notify(error.response.data.message)
         if (error.response.data.message == 'jwt expired')
           this.$router.push('/pages/login')
@@ -257,31 +236,6 @@ export default {
         if (error.response.data.message == 'jwt expired')
           this.$router.push('/pages/login')
       }
-    },
-    getAddress(address) {
-      return address.slice(0, 7) + '...' + address.slice(-4)
-    },
-    async send(e) {
-      e.preventDefault()
-      try {
-        this.isLoading2 = true
-        const { data } = await axios.post('/user/wallet/send', {
-          to: this.to,
-          amount: this.amount,
-        })
-        this.isLoading2 = false
-        // console.log(data)
-        this.notify(data)
-      } catch (error) {
-        this.isLoading2 = false
-        // console.error(error)
-        this.notify(error.response.data.message)
-        if (error.response.data.message == 'jwt expired')
-          this.$router.push('/pages/login')
-      }
-    },
-    onCopy() {
-      this.notify('Copy success')
     },
   },
 }

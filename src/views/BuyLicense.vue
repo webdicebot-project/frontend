@@ -11,7 +11,7 @@
           <CFormInput type="number" v-model="price" disabled />
         </div>
 
-        <p>Available balance: {{ balance }} TRX</p>
+        <p>Available balance: {{ wallet.balance }} TRX</p>
 
         <div class="d-grid gap-2">
           <CButton v-if="isLoading" disabled>
@@ -31,46 +31,25 @@ export default {
   data() {
     return {
       isLoading: false,
+      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {},
+      wallet: JSON.parse(localStorage.getItem('wallet')) || {},
       limit: '10',
-      balance: 0,
-      trx: {
-        usd: 0,
-        change24hr: 0,
-      },
     }
   },
   created() {
-    this.getPriceTrx()
-    this.getWallet()
+    setInterval(() => {
+      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
+      this.wallet = JSON.parse(localStorage.getItem('wallet'))
+    }, 6e4)
   },
   computed: {
-    price: function () {
-      const pricePerDay = 2 / this.trx.usd / 10
+    price() {
+      const { usd } = this.priceTrx
+      const pricePerDay = 2 / usd / 10
       return String(Number(this.limit * pricePerDay + 1).toFixed(6))
     },
   },
   methods: {
-    async getPriceTrx() {
-      try {
-        const { data } = await axios.get('/price')
-        // console.log(data)
-        this.trx = data.trx
-      } catch (error) {
-        // console.log(error)
-      }
-    },
-    async getWallet() {
-      try {
-        const { data } = await axios.get('/user/wallet')
-        // console.log(data)
-        this.balance = data.balance
-      } catch (error) {
-        // console.error(error)
-        this.notify(error.response.data.message)
-        if (error.response.data.message == 'jwt expired')
-          this.$router.push('/pages/login')
-      }
-    },
     async buy(e) {
       e.preventDefault()
       try {

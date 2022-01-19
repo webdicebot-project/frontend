@@ -34,7 +34,7 @@
 
                   <CRow>
                     <CCol :xs="6">
-                      <CButton v-if="isLoading" disabled>
+                      <CButton v-if="isLoading" class="px-4" disabled>
                         <CSpinner size="sm" />
                       </CButton>
                       <CButton v-else color="primary" class="px-4">

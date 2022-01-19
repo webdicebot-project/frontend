@@ -17,7 +17,6 @@
           </CButton>
 
           <CButton v-else color="primary" @click="importLicense">
-            <CSpinner v-show="isLoading" color="light" size="sm" />
             Import
           </CButton>
         </div>

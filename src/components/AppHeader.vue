@@ -8,10 +8,10 @@
       <CHeaderNav>
         <CNavItem>
           <CNavLink class="text-dark">
-            TRX: {{ Number(trx.usd).toFixed(4) }} (<span
-              :class="getColor(trx.change24hr)"
-            >
-              {{ Number(trx.change24hr).toFixed(2) }}% </span
+            TRX:
+            {{ priceTrx.usd }}
+            (<span :class="getColor(priceTrx.change24h)">
+              {{ priceTrx.change24h }}% </span
             >)
           </CNavLink>
         </CNavItem>
@@ -28,7 +28,6 @@
 
 <script>
 import AppBreadcrumb from './AppBreadcrumb'
-import axios from 'axios'
 
 export default {
   name: 'AppHeader',
@@ -37,28 +36,20 @@ export default {
   },
   data() {
     return {
-      trx: {
+      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {
         usd: 0,
-        change24hr: 0,
+        change24h: 0,
       },
     }
   },
   created() {
-    this.getPriceTrx()
-    setInterval(this.getPriceTrx, 3e4)
+    setInterval(() => {
+      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
+    }, 6e4)
   },
   methods: {
-    async getPriceTrx() {
-      try {
-        const { data } = await axios.get('/price')
-        // console.log(data)
-        this.trx = data.trx
-      } catch (error) {
-        // console.log(error)
-      }
-    },
-    getColor(change24hr) {
-      if (change24hr > 0) return 'text-success'
+    getColor(change24h) {
+      if (change24h > 0) return 'text-success'
       return 'text-danger'
     },
   },

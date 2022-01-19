@@ -67,6 +67,9 @@ export default {
     this.getMyLicense()
   },
   methods: {
+    onCopy() {
+      this.notify('Copy success')
+    },
     async getMyLicense() {
       try {
         this.isLoading = true
@@ -81,9 +84,6 @@ export default {
         if (error.response.data.message == 'jwt expired')
           this.$router.push('/pages/login')
       }
-    },
-    onCopy() {
-      this.notify('Copy success')
     },
   },
 }

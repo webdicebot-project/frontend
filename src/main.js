@@ -42,6 +42,27 @@ app.mixin({
         title: msg,
       })
     },
+    async getPriceTrx() {
+      try {
+        const { data } = await axios.get('/price')
+        // console.log(data)
+        localStorage.setItem('priceTrx', JSON.stringify(data))
+      } catch (error) {
+        // console.log(error)
+      }
+    },
+    async getWallet() {
+      try {
+        const { data } = await axios.get('/user/wallet')
+        // console.log(data)
+        localStorage.setItem('wallet', JSON.stringify(data))
+      } catch (error) {
+        // console.error(error)
+        this.notify(error.response.data.message)
+        if (error.response.data.message == 'jwt expired')
+          this.$router.push('/pages/login')
+      }
+    },
   },
 })
 
