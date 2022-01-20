@@ -24,7 +24,7 @@
                   <CInputGroupText>
                     <CIcon icon="cil-lock-locked" />
                   </CInputGroupText>
-                  <CFormInput placeholder="OTP" v-model="otp" />
+                  <CFormInput placeholder="OTP code" v-model="otp" />
                   <CButton v-if="isLoading" class="px-4" disabled>
                     <CSpinner size="sm" />
                   </CButton>
@@ -69,10 +69,11 @@ export default {
           : 'https://t.me/webdicebot_bot',
     }
   },
+  created() {
+    if (localStorage.getItem('token')) window.location.href = '/'
+  },
   methods: {
-    async getOTP(e) {
-      // console.log(e)
-      e.preventDefault()
+    async getOTP() {
       try {
         this.isLoading = true
         const { data } = await axios.post('/user/getOTP', {
@@ -87,9 +88,7 @@ export default {
         this.notify(error.response.data.message)
       }
     },
-    async login(e) {
-      // console.log(e)
-      e.preventDefault()
+    async login() {
       try {
         this.isLoading2 = true
         const { data } = await axios.post('/user/login', {
@@ -100,7 +99,10 @@ export default {
         // console.log(data)
         localStorage.setItem('token', data.token)
         this.notify('Welcome back')
-        if (data.token) setTimeout((window.location.href = '/'), 1e3)
+        if (data.token)
+          setTimeout(() => {
+            window.location.reload()
+          }, 2e3)
       } catch (error) {
         this.isLoading2 = false
         // console.error(error)
