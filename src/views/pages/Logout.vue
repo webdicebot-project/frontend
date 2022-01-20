@@ -5,8 +5,7 @@
 <script>
 export default {
   created() {
-    localStorage.removeItem('token')
-    window.location.href = '/'
+    this.logout()
   },
 }
 </script>

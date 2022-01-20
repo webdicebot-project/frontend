@@ -16,6 +16,7 @@
               <CTableHeaderCell scope="col">Time</CTableHeaderCell>
               <CTableHeaderCell scope="col">License</CTableHeaderCell>
               <CTableHeaderCell scope="col">Days</CTableHeaderCell>
+              <CTableHeaderCell scope="col">Price</CTableHeaderCell>
               <CTableHeaderCell scope="col">Expired</CTableHeaderCell>
             </CTableRow>
           </CTableHead>
@@ -35,6 +36,9 @@
                 >
               </CTableDataCell>
               <CTableDataCell>{{ item.limit }}</CTableDataCell>
+              <CTableDataCell>
+                {{ Number(item.price).toFixed(6) }} TRX
+              </CTableDataCell>
               <CTableDataCell>
                 {{
                   $options
@@ -81,7 +85,10 @@ export default {
         // console.error(error)
         this.isLoading = false
         this.notify(error.response.data.message)
-        if (error.response.data.message == 'jwt expired')
+        if (
+          error.response.data.message == 'jwt expired' ||
+          error.response.data.message == 'jwt malformed'
+        )
           this.$router.push('/pages/login')
       }
     },

@@ -62,7 +62,10 @@ export default {
         this.isLoading = false
         // console.error(error)
         this.notify(error.response.data.message)
-        if (error.response.data.message == 'jwt expired')
+        if (
+          error.response.data.message == 'jwt expired' ||
+          error.response.data.message == 'jwt malformed'
+        )
           this.$router.push('/pages/login')
       }
     },

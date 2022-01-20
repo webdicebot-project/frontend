@@ -18,11 +18,13 @@ const routes = [
       {
         path: '/bot-installer',
         name: 'Bot Installer',
+        meta: { requiresAuth: true },
         component: () => import('@/views/BotInstaller.vue'),
       },
       {
         path: '/awesome-scripts',
         name: 'Awesome Scripts',
+        meta: { requiresAuth: true },
         component: () => import('@/views/AwesomeScripts.vue'),
       },
       {

@@ -136,8 +136,8 @@ export default {
     return {
       urlTelegramBot:
         window.location.hostname == 'localhost'
-          ? 'https://t.me/webdicebotxyz_dev_bot'
-          : 'https://t.me/webdicebotxyz_bot',
+          ? 'https://t.me/webdicebot_dev_bot'
+          : 'https://t.me/webdicebot_bot',
     }
   },
 }
