@@ -54,8 +54,10 @@ export default {
           error.response.data.message == 'jwt expired' ||
           error.response.data.message == 'jwt malformed' ||
           error.response.data.message == 'invalid signature'
-        )
-          this.$router.push('/pages/login')
+        ) {
+          this.notify('Session expired')
+          this.logout()
+        }
       }
     },
   },
