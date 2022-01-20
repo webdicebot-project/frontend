@@ -1,4 +1,1 @@
-# WebDiceBot.Xyz Installer
-
-- Customize: mhqb365
-- Template: CoreUI Free Vue Admin Template v4
+Template by CoreUI Free Vue Admin Template v4
