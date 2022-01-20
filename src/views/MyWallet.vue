@@ -223,7 +223,8 @@ export default {
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
-          error.response.data.message == 'jwt malformed'
+          error.response.data.message == 'jwt malformed' ||
+          error.response.data.message == 'invalid signature'
         )
           this.$router.push('/pages/login')
       }
@@ -238,7 +239,8 @@ export default {
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
-          error.response.data.message == 'jwt malformed'
+          error.response.data.message == 'jwt malformed' ||
+          error.response.data.message == 'invalid signature'
         )
           this.$router.push('/pages/login')
       }
