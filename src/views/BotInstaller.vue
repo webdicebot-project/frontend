@@ -259,14 +259,6 @@ script.src = BOT_URL+'/bot/init/duckdice.io-xmas'
 document.body.appendChild(script)`,
         },
         {
-          label: 'ether-dice.io',
-          value: `const BOT_URL = '${api}'
-var script = document.createElement('script')
-script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/ether-dice.io'
-document.body.appendChild(script)`,
-        },
-        {
           label: 'faucetpay.io - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
