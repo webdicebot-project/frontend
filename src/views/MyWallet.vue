@@ -142,7 +142,6 @@
                   <CTableHeaderCell scope="col">From</CTableHeaderCell>
                   <CTableHeaderCell scope="col">To</CTableHeaderCell>
                   <CTableHeaderCell scope="col">Amount</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Currency</CTableHeaderCell>
                 </CTableRow>
               </CTableHead>
               <CTableBody>
@@ -156,7 +155,9 @@
                   </CTableDataCell>
                   <CTableDataCell>{{ getAddress(item.from) }}</CTableDataCell>
                   <CTableDataCell>{{ getAddress(item.to) }}</CTableDataCell>
-                  <CTableDataCell>{{ item.amount }}</CTableDataCell>
+                  <CTableDataCell>
+                    {{ item.amount }} {{ item.currency }}
+                  </CTableDataCell>
                   <CTableDataCell>
                     {{ String(item.currency).toUpperCase() }}
                   </CTableDataCell>
