@@ -42,37 +42,14 @@ app.mixin({
         title: msg,
       })
     },
-    async getPriceTrx() {
-      try {
-        const { data } = await axios.get('/price')
-        // console.log(data)
-        localStorage.setItem('priceTrx', JSON.stringify(data))
-      } catch (error) {
-        // console.log(error)
-      }
-    },
-    async getWallet() {
-      try {
-        const { data } = await axios.get('/user/wallet')
-        // console.log(data)
-        localStorage.setItem('wallet', JSON.stringify(data))
-      } catch (error) {
-        // console.error(error)
-        this.notify(error.response.data.message)
-        if (
-          error.response.data.message == 'jwt expired' ||
-          error.response.data.message == 'jwt malformed' ||
-          error.response.data.message == 'invalid signature'
-        ) {
-          this.notify('Session expired')
-          this.logout()
-        }
-      }
+    onCopy() {
+      this.notify('Copy success')
     },
     logout() {
       localStorage.removeItem('token')
-      localStorage.removeItem('wallet')
-      window.location.href = '/'
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 2e3)
     },
   },
 })

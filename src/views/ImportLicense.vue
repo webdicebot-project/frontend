@@ -36,8 +36,7 @@ export default {
     }
   },
   methods: {
-    async importLicense(e) {
-      e.preventDefault()
+    async importLicense() {
       try {
         this.isLoading = true
         const { data } = await axios.get(

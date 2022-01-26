@@ -71,9 +71,6 @@ export default {
     this.getMyLicense()
   },
   methods: {
-    onCopy() {
-      this.notify('Copy success')
-    },
     async getMyLicense() {
       try {
         this.isLoading = true

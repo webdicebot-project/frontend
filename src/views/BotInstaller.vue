@@ -442,9 +442,6 @@ document.body.appendChild(script)`,
     changeBot(e) {
       this.installer = e.target.value
     },
-    onCopy() {
-      this.notify('Copy success')
-    },
   },
 }
 </script>

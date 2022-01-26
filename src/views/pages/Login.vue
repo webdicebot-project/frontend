@@ -18,6 +18,12 @@
                     <CIcon icon="cil-user" />
                   </CInputGroupText>
                   <CFormInput placeholder="MemberID" v-model="idUser" />
+                  <CButton v-if="isLoading" class="px-4" disabled>
+                    <CSpinner size="sm" />
+                  </CButton>
+                  <CButton v-else color="success" @click="getOTP">
+                    Get OTP
+                  </CButton>
                 </CInputGroup>
 
                 <CInputGroup class="mb-4">
@@ -25,12 +31,6 @@
                     <CIcon icon="cil-lock-locked" />
                   </CInputGroupText>
                   <CFormInput placeholder="OTP code" v-model="otp" />
-                  <CButton v-if="isLoading" class="px-4" disabled>
-                    <CSpinner size="sm" />
-                  </CButton>
-                  <CButton v-else color="success" @click="getOTP">
-                    Get OTP
-                  </CButton>
                 </CInputGroup>
 
                 <CRow>
@@ -64,7 +64,7 @@ export default {
       idUser: '',
       otp: '',
       urlTelegramBot:
-        window.location.hostname == 'localhost'
+        process.env.NODE_ENV == 'development'
           ? 'https://t.me/webdicebot_dev_bot'
           : 'https://t.me/webdicebot_bot',
     }

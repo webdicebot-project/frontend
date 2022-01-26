@@ -135,7 +135,7 @@ export default {
   data() {
     return {
       urlTelegramBot:
-        window.location.hostname == 'localhost'
+        process.env.NODE_ENV == 'development'
           ? 'https://t.me/webdicebot_dev_bot'
           : 'https://t.me/webdicebot_bot',
     }

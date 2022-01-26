@@ -156,10 +156,7 @@
                   <CTableDataCell>{{ getAddress(item.from) }}</CTableDataCell>
                   <CTableDataCell>{{ getAddress(item.to) }}</CTableDataCell>
                   <CTableDataCell>
-                    {{ item.amount }} {{ item.currency }}
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    {{ String(item.currency).toUpperCase() }}
+                    {{ item.amount }} {{ String(item.currency).toUpperCase() }}
                   </CTableDataCell>
                 </CTableRow>
               </CTableBody>
@@ -172,6 +169,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import axios from 'axios'
 import QRCodeVue3 from 'qrcode-vue3'
 import moment from 'moment'
@@ -185,30 +183,27 @@ export default {
     return {
       isLoading: false,
       tabPaneActiveKey: 1,
-      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {},
-      wallet: JSON.parse(localStorage.getItem('wallet')) || {},
       to: '',
       amount: '0',
-      transactions: [],
     }
   },
-  created() {
-    this.getTransaction()
-    setInterval(() => {
-      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
-      this.wallet = JSON.parse(localStorage.getItem('wallet'))
-      this.getTransaction()
-    }, 6e4)
+  computed: {
+    priceTrx() {
+      return this.$store.state.priceTrx
+    },
+    wallet() {
+      return this.$store.state.wallet
+    },
+    transactions() {
+      return this.$store.state.transactions
+    },
   },
   methods: {
-    onCopy() {
-      this.notify('Copy success')
-    },
+    ...mapActions(['getPriceTrx', 'getWallet']),
     getAddress(address) {
       return address.slice(0, 7) + '...' + address.slice(-4)
     },
-    async send(e) {
-      e.preventDefault()
+    async send() {
       try {
         this.isLoading = true
         const { data } = await axios.post('/user/wallet/send', {
@@ -228,24 +223,6 @@ export default {
           error.response.data.message == 'invalid signature'
         )
           this.logout()
-      }
-    },
-    async getTransaction() {
-      try {
-        const { data } = await axios.get('/user/wallet/transaction')
-        // console.log(data)
-        this.transactions = data
-      } catch (error) {
-        // console.error(error)
-        this.notify(error.response.data.message)
-        if (
-          error.response.data.message == 'jwt expired' ||
-          error.response.data.message == 'jwt malformed' ||
-          error.response.data.message == 'invalid signature'
-        ) {
-          this.notify('Session expired')
-          this.logout()
-        }
       }
     },
   },

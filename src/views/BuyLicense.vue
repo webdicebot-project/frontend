@@ -31,18 +31,16 @@ export default {
   data() {
     return {
       isLoading: false,
-      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {},
-      wallet: JSON.parse(localStorage.getItem('wallet')) || {},
       limit: '10',
     }
   },
-  created() {
-    setInterval(() => {
-      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
-      this.wallet = JSON.parse(localStorage.getItem('wallet'))
-    }, 6e4)
-  },
   computed: {
+    priceTrx() {
+      return this.$store.state.priceTrx
+    },
+    wallet() {
+      return this.$store.state.wallet
+    },
     price() {
       const { usd } = this.priceTrx
       const pricePerDay = 2 / usd / 10
@@ -50,8 +48,7 @@ export default {
     },
   },
   methods: {
-    async buy(e) {
-      e.preventDefault()
+    async buy() {
       try {
         this.isLoading = true
         const { data } = await axios.get('/license/buy?limit=' + this.limit)

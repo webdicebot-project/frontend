@@ -34,18 +34,10 @@ export default {
   components: {
     AppBreadcrumb,
   },
-  data() {
-    return {
-      priceTrx: JSON.parse(localStorage.getItem('priceTrx')) || {
-        usd: 0,
-        change24h: 0,
-      },
-    }
-  },
-  created() {
-    setInterval(() => {
-      this.priceTrx = JSON.parse(localStorage.getItem('priceTrx'))
-    }, 6e4)
+  computed: {
+    priceTrx() {
+      return this.$store.state.priceTrx
+    },
   },
   methods: {
     getColor(change24h) {
