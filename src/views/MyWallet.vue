@@ -213,6 +213,8 @@ export default {
         this.isLoading = false
         // console.log(data)
         this.notify(data)
+        this.to = ''
+        this.amount ='0'
       } catch (error) {
         this.isLoading = false
         // console.error(error)
