@@ -6,6 +6,8 @@
 
     <CCard class="mb-4">
       <CCardBody>
+        <h4>Import License</h4>
+
         <div class="mb-3">
           <CFormLabel>License</CFormLabel>
           <CFormInput type="text" v-model="license" />

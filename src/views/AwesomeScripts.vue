@@ -2,119 +2,93 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        <h4>Awesome Scripts</h4>
+
         <CListGroup>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/allTatic.lua"
-              target="_blank"
+          <CListGroupItem v-for="url in urls" :key="url.title">
+            <span
+              class="copy text-primary"
+              v-clipboard:copy="url.url"
+              v-clipboard:success="onCopy"
             >
-              allTatic.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/bet-boom.lua"
-              target="_blank"
-            >
-              bet-boom.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/clean.lua"
-              target="_blank"
-            >
-              clean.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/forDuck.lua"
-              target="_blank"
-            >
-              forDuck.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/makecolor.lua"
-              target="_blank"
-            >
-              makecolor.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/new-style.lua"
-              target="_blank"
-            >
-              new-style.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newAI.lua"
-              target="_blank"
-            >
-              newAI.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newStardy.lua"
-              target="_blank"
-            >
-              newStardy.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newVersion.lua"
-              target="_blank"
-            >
-              newVersion.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/noCacularBet.lua"
-              target="_blank"
-            >
-              noCacularBet.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/risk.lua"
-              target="_blank"
-            >
-              risk.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/smartBet.lua"
-              target="_blank"
-            >
-              smartBet.lua
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a
-              href="https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/taticNew.lua"
-              target="_blank"
-            >
-              taticNew.lua
-            </a>
+              {{ url.title }}
+              <CIcon name="cil-copy" />
+            </span>
           </CListGroupItem>
         </CListGroup>
+
+        <p class="pt-4">
+          Make by
+          <a href="https://facebook.com/ttluan" target="_blank">
+            Truong Trieu Luan
+          </a>
+        </p>
       </CCardBody>
     </CCard>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      urls: [
+        {
+          title: 'allTatic.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/allTatic.lua',
+        },
+        {
+          title: 'bet-boom.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/bet-boom.lua',
+        },
+        {
+          title: 'clean.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/clean.lua',
+        },
+        {
+          title: 'forDuck.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/forDuck.lua',
+        },
+        {
+          title: 'makecolor.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/makecolor.lua',
+        },
+        {
+          title: 'new-style.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/new-style.lua',
+        },
+        {
+          title: 'newAI.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newAI.lua',
+        },
+        {
+          title: 'newStardy.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newStardy.lua',
+        },
+        {
+          title: 'newVersion.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/newVersion.lua',
+        },
+        {
+          title: 'noCacularBet.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/noCacularBet.lua',
+        },
+        {
+          title: 'risk.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/risk.lua',
+        },
+        {
+          title: 'smartBet.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/smartBet.lua',
+        },
+        {
+          title: 'taticNew.lua',
+          url: 'https://raw.githubusercontent.com/webdicebot-project/awesome-scripts/master/taticNew.lua',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style></style>

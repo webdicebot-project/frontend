@@ -97,7 +97,8 @@
               v-clipboard:copy="wallet.address"
               v-clipboard:success="onCopy"
             >
-              {{ wallet.address }} &#x2750;
+              {{ wallet.address }}
+              <CIcon name="cil-copy" />
             </span>
           </CCardBody>
         </CCard>
@@ -214,7 +215,7 @@ export default {
         // console.log(data)
         this.notify(data)
         this.to = ''
-        this.amount ='0'
+        this.amount = '0'
       } catch (error) {
         this.isLoading = false
         // console.error(error)

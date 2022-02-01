@@ -2,7 +2,7 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Terms of use</h4>
+        <h4>Terms Of Use</h4>
 
         <p>
           The following user agreement is to read in its entirety prior to the
@@ -25,7 +25,7 @@
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>How to use?</h4>
+        <h4>How To Use?</h4>
 
         <pre>1. Chat with <a :href="urlTelegramBot" target="_blank">Telegram Bot</a> to create your profile then <router-link to="/pages/login">Login</router-link> and <router-link to="/buy-license">Buy License</router-link>
 2. Copy installer script from <router-link to="/bot-installer">Bot Installer</router-link>
@@ -38,7 +38,7 @@
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Lua dice script</h4>
+            <h4>Lua Dice Script</h4>
 
             <pre>
 chance=49.5
@@ -61,7 +61,7 @@ end</pre
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Javascript dice script</h4>
+            <h4>Javascript Dice Script</h4>
 
             <pre>
 chance=49.5
@@ -84,7 +84,7 @@ function dobet() {
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>System variables</h4>
+        <h4>System Variables</h4>
 
         <pre>
 chance : % win change
@@ -111,7 +111,7 @@ currentstreak : streak of bet count</pre
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>System functions</h4>
+        <h4>System Functions</h4>
 
         <pre>
 dobet() : loop betting

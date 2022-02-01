@@ -31,7 +31,7 @@ export default [
     component: 'CNavItem',
     name: 'My License',
     to: '/my-license',
-    icon: 'cil-lock-locked',
+    icon: 'cil-star',
   },
   {
     component: 'CNavItem',

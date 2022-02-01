@@ -2,14 +2,18 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        <h4>Buy License</h4>
+
         <div class="mb-3">
           <CFormLabel>Days</CFormLabel>
           <CFormInput type="number" v-model="limit" />
         </div>
-        <div class="mb-3">
-          <CFormLabel>Pay amount</CFormLabel>
-          <CFormInput type="number" v-model="price" disabled />
-        </div>
+
+        <CFormLabel>Pay amount</CFormLabel>
+        <CInputGroup class="mb-3">
+          <CFormInput v-model="price" disabled />
+          <CInputGroupText>TRX</CInputGroupText>
+        </CInputGroup>
 
         <p>Available balance: {{ wallet.balance }} TRX</p>
 

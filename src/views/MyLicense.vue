@@ -8,6 +8,8 @@
 
     <CCard class="mb-4">
       <CCardBody>
+        <h4>My License</h4>
+
         <CSpinner v-if="isLoading" component="span" aria-hidden="true" />
 
         <CTable v-else responsive>
@@ -32,8 +34,9 @@
                   class="copy"
                   v-clipboard:copy="item.license"
                   v-clipboard:success="onCopy"
-                  >{{ item.license }} &#x2750;</span
-                >
+                  >{{ item.license }}
+                  <CIcon name="cil-copy" />
+                </span>
               </CTableDataCell>
               <CTableDataCell>{{ item.limit }}</CTableDataCell>
               <CTableDataCell>

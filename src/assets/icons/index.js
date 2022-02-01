@@ -12,6 +12,8 @@ import {
   cilExternalLink,
   cilCode,
   cilHistory,
+  cilCopy,
+  cilStar,
 } from '@coreui/icons'
 
 export const iconsSet = Object.assign({
@@ -28,4 +30,6 @@ export const iconsSet = Object.assign({
   cilExternalLink,
   cilCode,
   cilHistory,
+  cilCopy,
+  cilStar,
 })
