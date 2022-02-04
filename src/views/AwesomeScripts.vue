@@ -4,7 +4,7 @@
       <CCardBody>
         <h4>Awesome Scripts</h4>
 
-        <CListGroup>
+        <CListGroup class="mb-3">
           <CListGroupItem v-for="url in urls" :key="url.title">
             <span
               class="copy text-primary"
@@ -17,12 +17,14 @@
           </CListGroupItem>
         </CListGroup>
 
-        <p class="pt-4">
-          Make by
+        <CAlert color="primary">
+          Script make by
           <a href="https://facebook.com/ttluan" target="_blank">
             Truong Trieu Luan
           </a>
-        </p>
+        </CAlert>
+
+        <p class="small">* Click to copy link raw script from github</p>
       </CCardBody>
     </CCard>
   </div>

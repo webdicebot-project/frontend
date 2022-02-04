@@ -1,11 +1,5 @@
 <template>
   <div>
-    <router-link to="/import-license">
-      <CButton color="secondary" class="mb-3">
-        Import license from old system
-      </CButton>
-    </router-link>
-
     <CCard class="mb-4">
       <CCardBody>
         <h4>My License</h4>

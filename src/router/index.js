@@ -40,12 +40,6 @@ const routes = [
         component: () => import('@/views/MyLicense.vue'),
       },
       {
-        path: '/import-license',
-        name: 'Import License',
-        meta: { requiresAuth: true },
-        component: () => import('@/views/ImportLicense.vue'),
-      },
-      {
         path: '/my-wallet',
         name: 'My Wallet',
         meta: { requiresAuth: true },
@@ -64,6 +58,11 @@ const routes = [
     },
     children: [
       {
+        path: '404',
+        name: 'Oops! 404 - Page not found',
+        component: () => import('@/views/pages/404'),
+      },
+      {
         path: 'login',
         name: 'Login',
         component: () => import('@/views/pages/Login'),
@@ -75,6 +74,7 @@ const routes = [
       },
     ],
   },
+  { path: '/:pathMatch(.*)*', redirect: '/pages/404' },
 ]
 
 const router = createRouter({
