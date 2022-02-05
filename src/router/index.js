@@ -12,36 +12,36 @@ const routes = [
     children: [
       {
         path: '/get-started',
-        name: 'Get Started',
+        name: 'Get started',
         component: () => import('@/views/GetStarted.vue'),
       },
       {
         path: '/bot-installer',
-        name: 'Bot Installer',
+        name: 'Bot installer',
         meta: { requiresAuth: true },
         component: () => import('@/views/BotInstaller.vue'),
       },
       {
         path: '/awesome-scripts',
-        name: 'Awesome Scripts',
+        name: 'Awesome scripts',
         meta: { requiresAuth: true },
         component: () => import('@/views/AwesomeScripts.vue'),
       },
       {
         path: '/buy-license',
-        name: 'Buy License',
+        name: 'Buy license',
         meta: { requiresAuth: true },
         component: () => import('@/views/BuyLicense.vue'),
       },
       {
         path: '/my-license',
-        name: 'My License',
+        name: 'My license',
         meta: { requiresAuth: true },
         component: () => import('@/views/MyLicense.vue'),
       },
       {
         path: '/my-wallet',
-        name: 'My Wallet',
+        name: 'My wallet',
         meta: { requiresAuth: true },
         component: () => import('@/views/MyWallet.vue'),
       },

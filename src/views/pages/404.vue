@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <h1>Oops!</h1>
-    404 - Page not found
+    Page not found
     <br />
     Redirect to homepage in {{ s }}s
   </div>

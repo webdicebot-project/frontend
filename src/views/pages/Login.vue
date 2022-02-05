@@ -9,8 +9,9 @@
                 <h1>Login</h1>
 
                 <p class="text-medium-emphasis">
-                  Get MemberID at
+                  Chat with
                   <a :href="urlTelegramBot" target="_blank"> Telegram Bot </a>
+                  to Get MemberID
                 </p>
 
                 <CInputGroup class="mb-3">
@@ -69,9 +70,6 @@ export default {
           : 'https://t.me/webdicebot_bot',
     }
   },
-  created() {
-    if (localStorage.getItem('token')) window.location.href = '/'
-  },
   methods: {
     async getOTP() {
       try {
@@ -101,7 +99,7 @@ export default {
         this.notify('Welcome back')
         if (data.token)
           setTimeout(() => {
-            window.location.reload()
+            window.location.href = '/'
           }, 2e3)
       } catch (error) {
         this.isLoading2 = false

@@ -2,8 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Awesome Scripts</h4>
-
         <CListGroup class="mb-3">
           <CListGroupItem v-for="url in urls" :key="url.title">
             <span

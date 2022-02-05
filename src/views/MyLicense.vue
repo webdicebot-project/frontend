@@ -2,8 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>My License</h4>
-
         <CSpinner v-if="isLoading" component="span" aria-hidden="true" />
 
         <CTable v-else responsive>

@@ -45,12 +45,6 @@ app.mixin({
     onCopy() {
       this.notify('Copy success')
     },
-    logout() {
-      localStorage.removeItem('token')
-      setTimeout(() => {
-        window.location.href = '/'
-      }, 2e3)
-    },
   },
 })
 

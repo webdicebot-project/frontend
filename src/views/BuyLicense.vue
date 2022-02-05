@@ -2,8 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Buy License</h4>
-
         <div class="mb-3">
           <CFormLabel>Days</CFormLabel>
           <CFormInput type="number" v-model="limit" />

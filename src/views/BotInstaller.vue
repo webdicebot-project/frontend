@@ -62,13 +62,13 @@
             <CAccordionBody>
               <CListGroup>
                 <CListGroupItem>
-                  <a href="https://youtu.be/HTWbu14xPwU" target="_blank">
-                    Video use Installer
+                  <a href="https://youtu.be/SghrWAdtHJE" target="_blank">
+                    How to use Installer in webdicebot.xyz?
                   </a>
                 </CListGroupItem>
                 <CListGroupItem>
                   <a href="https://youtu.be/21QMgJkDMH0" target="_blank">
-                    Video use Emulator
+                    How to use Emulator in webdicebot.xyz?
                   </a>
                 </CListGroupItem>
               </CListGroup>
@@ -76,6 +76,14 @@
           </CAccordionItem>
 
           <CAccordionItem :item-key="2">
+            <CAccordionHeader> What is Emulator? </CAccordionHeader>
+            <CAccordionBody>
+              This is the place to install bot of some sites. Because some
+              sites not allow install bot direct
+            </CAccordionBody>
+          </CAccordionItem>
+
+          <CAccordionItem :item-key="3">
             <CAccordionHeader> Why dice script not work? </CAccordionHeader>
             <CAccordionBody>
               Dice script must follow syntax of programming language. In Lua
@@ -83,7 +91,7 @@
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="3">
+          <CAccordionItem :item-key="4">
             <CAccordionHeader>
               Why betfury.io have error Join room first?
             </CAccordionHeader>
@@ -93,7 +101,7 @@
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="4">
+          <CAccordionItem :item-key="5">
             <CAccordionHeader>
               Why betfury.io have stop after some bet?
             </CAccordionHeader>
@@ -103,7 +111,7 @@
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="5">
+          <CAccordionItem :item-key="6">
             <CAccordionHeader>
               Why stake.com or primedice.com show alert: "get new pair of seed"?
             </CAccordionHeader>
@@ -243,7 +251,15 @@ script.src = BOT_URL+'/bot/init/cryptoplay-limbo'
 document.body.appendChild(script)`,
         },
         {
-          label: 'duckdice.io - faucet mode',
+          //           label: 'duckdice.io - bonuses',
+          //           value: `const BOT_URL = '${api}'
+          // var script = document.createElement('script')
+          // script.type = 'text/javascript'
+          // script.src = BOT_URL+'/bot/init/duckdice.io-bonuses'
+          // document.body.appendChild(script)`,
+        },
+        {
+          label: 'duckdice.io - faucet',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
@@ -251,7 +267,7 @@ script.src = BOT_URL+'/bot/init/duckdice.io-faucet'
 document.body.appendChild(script)`,
         },
         {
-          label: 'duckdice.io - main mode',
+          label: 'duckdice.io - main',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
@@ -259,7 +275,7 @@ script.src = BOT_URL+'/bot/init/duckdice.io-main'
 document.body.appendChild(script)`,
         },
         {
-          label: 'duckdice.io - xmas mode',
+          label: 'duckdice.io - xmas',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
@@ -410,14 +426,14 @@ script.type = 'text/javascript'
 script.src = BOT_URL+'/bot/init/stake-limbo-emulator'
 document.body.appendChild(script)`,
         },
-//         {
-//           label: 'starbets.io - dice',
-//           value: `const BOT_URL = '${api}'
-// var script = document.createElement('script')
-// script.type = 'text/javascript'
-// script.src = BOT_URL+'/bot/init/starbets.io-dice'
-// document.body.appendChild(script)`,
-//         },
+        //         {
+        //           label: 'starbets.io - dice',
+        //           value: `const BOT_URL = '${api}'
+        // var script = document.createElement('script')
+        // script.type = 'text/javascript'
+        // script.src = BOT_URL+'/bot/init/starbets.io-dice'
+        // document.body.appendChild(script)`,
+        //         },
         {
           label: 'trustdice.win - dice',
           value: `const BOT_URL = '${api}'
