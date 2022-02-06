@@ -78,8 +78,8 @@
           <CAccordionItem :item-key="2">
             <CAccordionHeader> What is Emulator? </CAccordionHeader>
             <CAccordionBody>
-              This is the place to install bot of some sites. Because some
-              sites not allow install bot direct
+              This is the place to install bot of some sites. Because some sites
+              not allow install bot direct
             </CAccordionBody>
           </CAccordionItem>
 
@@ -251,12 +251,12 @@ script.src = BOT_URL+'/bot/init/cryptoplay-limbo'
 document.body.appendChild(script)`,
         },
         {
-          //           label: 'duckdice.io - bonuses',
-          //           value: `const BOT_URL = '${api}'
-          // var script = document.createElement('script')
-          // script.type = 'text/javascript'
-          // script.src = BOT_URL+'/bot/init/duckdice.io-bonuses'
-          // document.body.appendChild(script)`,
+          label: 'duckdice.io - bonuses',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/duckdice.io-bonuses'
+document.body.appendChild(script)`,
         },
         {
           label: 'duckdice.io - faucet',
