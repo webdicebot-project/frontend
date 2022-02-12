@@ -2,7 +2,7 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <CSpinner v-if="isLoading" component="span" aria-hidden="true" />
+        <CSpinner v-if="isLoading" />
 
         <CTable v-else responsive>
           <CTableHead>

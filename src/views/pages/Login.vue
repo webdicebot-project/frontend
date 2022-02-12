@@ -100,7 +100,7 @@ export default {
         if (data.token)
           setTimeout(() => {
             window.location.href = '/'
-          }, 2e3)
+          }, 1e3)
       } catch (error) {
         this.isLoading2 = false
         // console.error(error)

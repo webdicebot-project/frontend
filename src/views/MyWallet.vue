@@ -2,26 +2,32 @@
   <div>
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
-        <h2>{{ wallet.balance }} TRX</h2>
+        <CSpinner v-if="isLoading" />
 
-        <h6>${{ Number(wallet.balance * priceTrx.usd).toFixed(2) }}</h6>
+        <div v-else>
+          <h2>{{ wallet.balance }} TRX</h2>
 
-        <p class="mt-4 mb-0 small">
-          <CBadge
-            color="light"
-            shape="rounded-pill"
-            v-c-tooltip="
-              'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
-            "
-            class="copy text-dark"
-          >
-            ?
-          </CBadge>
-          Bandwidth:
-          {{ wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed }}/{{
-            wallet.bandwidth.freeNetLimit
-          }}
-        </p>
+          <h6>
+            ${{ Number(wallet.balance * $store.state.priceTrx.usd).toFixed(2) }}
+          </h6>
+
+          <p class="mt-4 mb-0 small">
+            <CBadge
+              color="light"
+              shape="rounded-pill"
+              v-c-tooltip="
+                'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
+              "
+              class="copy text-dark"
+            >
+              ?
+            </CBadge>
+            Bandwidth:
+            {{
+              wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed
+            }}/{{ wallet.bandwidth.freeNetLimit }}
+          </p>
+        </div>
       </CCardBody>
     </CCard>
 
@@ -76,30 +82,34 @@
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
         <CCard>
           <CCardBody class="text-center">
-            <p class="small">
-              Only send TRX to this address, 1 confirmation(s) required
-              <br />
-              We do not accept BEP20 from Binance
-            </p>
+            <CSpinner v-if="isLoading" />
 
-            <QRCodeVue3
-              :value="wallet.address"
-              :width="200"
-              :height="200"
-              :dotsOptions="{
-                type: 'square',
-              }"
-              class="mb-3"
-            />
+            <div v-else>
+              <p class="small">
+                Only send TRX to this address, 1 confirmation(s) required
+                <br />
+                We do not accept BEP20 from Binance
+              </p>
 
-            <span
-              class="copy"
-              v-clipboard:copy="wallet.address"
-              v-clipboard:success="onCopy"
-            >
-              {{ wallet.address }}
-              <CIcon name="cil-copy" />
-            </span>
+              <QRCodeVue3
+                :value="wallet.address"
+                :width="200"
+                :height="200"
+                :dotsOptions="{
+                  type: 'square',
+                }"
+                class="mb-3"
+              />
+
+              <span
+                class="copy"
+                v-clipboard:copy="wallet.address"
+                v-clipboard:success="onCopy"
+              >
+                {{ wallet.address }}
+                <CIcon name="cil-copy" />
+              </span>
+            </div>
           </CCardBody>
         </CCard>
       </CTabPane>
@@ -123,7 +133,7 @@
             </div>
 
             <div class="d-grid gap-2">
-              <CButton v-if="isLoading" disabled>
+              <CButton v-if="isLoading2" disabled>
                 <CSpinner size="sm" />
               </CButton>
 
@@ -183,49 +193,93 @@ export default {
   data() {
     return {
       isLoading: false,
+      isLoading2: false,
       tabPaneActiveKey: 1,
+      wallet: {
+        address: '',
+        balance: 0,
+        bandwidth: {
+          freeNetLimit: 0,
+          freeNetUsed: 0,
+        },
+      },
+      transactions: [],
       to: '',
       amount: '0',
     }
   },
-  computed: {
-    priceTrx() {
-      return this.$store.state.priceTrx
-    },
-    wallet() {
-      return this.$store.state.wallet
-    },
-    transactions() {
-      return this.$store.state.transactions
-    },
+  created() {
+    this.getWallet()
+    this.getTransactions()
   },
   methods: {
-    ...mapActions(['getPriceTrx', 'getWallet']),
+    ...mapActions(['getPriceTrx']),
     getAddress(address) {
       return address.slice(0, 7) + '...' + address.slice(-4)
     },
-    async send() {
+    async getWallet() {
       try {
         this.isLoading = true
+        const { data } = await axios.get('/user/wallet')
+        // console.log(data)
+        this.isLoading = false
+        this.wallet = data
+      } catch (error) {
+        // console.error(error)
+        this.isLoading = false
+        this.notify(error.response.data.message)
+        if (
+          error.response.data.message == 'jwt expired' ||
+          error.response.data.message == 'jwt malformed' ||
+          error.response.data.message == 'invalid signature'
+        ) {
+          this.notify('Session expired')
+          this.logout()
+        }
+      }
+    },
+    async send() {
+      try {
+        this.isLoading2 = true
         const { data } = await axios.post('/user/wallet/send', {
           to: this.to,
           amount: this.amount,
         })
-        this.isLoading = false
         // console.log(data)
+        this.isLoading2 = false
         this.notify(data)
         this.to = ''
         this.amount = '0'
       } catch (error) {
-        this.isLoading = false
+        // console.error(error)
+        this.isLoading2 = false
+        this.notify(error.response.data.message)
+        if (
+          error.response.data.message == 'jwt expired' ||
+          error.response.data.message == 'jwt malformed' ||
+          error.response.data.message == 'invalid signature'
+        ) {
+          this.notify('Session expired')
+          this.logout()
+        }
+      }
+    },
+    async getTransactions() {
+      try {
+        const { data } = await axios.get('/user/wallet/transaction')
+        // console.log(data)
+        this.transactions = data
+      } catch (error) {
         // console.error(error)
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
           error.response.data.message == 'jwt malformed' ||
           error.response.data.message == 'invalid signature'
-        )
+        ) {
+          this.notify('Session expired')
           this.logout()
+        }
       }
     },
   },

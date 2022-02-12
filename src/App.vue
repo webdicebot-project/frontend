@@ -9,16 +9,9 @@ export default {
   async created() {
     this.getPriceTrx()
     setInterval(this.getPriceTrx, 6e4)
-
-    if (localStorage.getItem('token')) {
-      await this.getWallet()
-      await this.getTransactions()
-      setInterval(this.getWallet, 6e4)
-      setInterval(this.getTransactions, 6e4)
-    }
   },
   methods: {
-    ...mapActions(['getPriceTrx', 'getWallet', 'getTransactions']),
+    ...mapActions(['getPriceTrx']),
   },
 }
 </script>

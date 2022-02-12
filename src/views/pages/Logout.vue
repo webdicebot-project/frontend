@@ -1,9 +1,7 @@
 <template>
   <div class="p-4">
     <h1>Goodbye!</h1>
-    Logging out
-    <br />
-    Redirect to homepage in {{ s }}s
+    Redirect to Get started in {{ s }}s
   </div>
 </template>
 

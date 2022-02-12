@@ -63,12 +63,12 @@
               <CListGroup>
                 <CListGroupItem>
                   <a href="https://youtu.be/SghrWAdtHJE" target="_blank">
-                    How to use Installer in webdicebot.xyz?
+                    How to use Installer?
                   </a>
                 </CListGroupItem>
                 <CListGroupItem>
                   <a href="https://youtu.be/21QMgJkDMH0" target="_blank">
-                    How to use Emulator in webdicebot.xyz?
+                    How to use Emulator?
                   </a>
                 </CListGroupItem>
               </CListGroup>

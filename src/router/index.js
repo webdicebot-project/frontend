@@ -6,7 +6,7 @@ import DefaultLayout from '@/layouts/DefaultLayout'
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Dashboard',
     component: DefaultLayout,
     redirect: '/get-started',
     children: [
@@ -59,7 +59,7 @@ const routes = [
     children: [
       {
         path: '404',
-        name: 'Oops! 404 - Page not found',
+        name: 'Page not found!',
         component: () => import('@/views/pages/404'),
       },
       {
@@ -69,7 +69,7 @@ const routes = [
       },
       {
         path: 'logout',
-        name: 'Logout',
+        name: 'Goodbye!',
         component: () => import('@/views/pages/Logout'),
       },
     ],

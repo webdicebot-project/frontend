@@ -32,6 +32,12 @@ app.provide('icons', icons)
 app.component('CIcon', CIcon)
 app.mixin({
   methods: {
+    logout() {
+      localStorage.removeItem('token')
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 1e3)
+    },
     notify(msg) {
       this.$swal({
         toast: true,
