@@ -347,14 +347,6 @@ script.src = BOT_URL+'/bot/init/luckydiamond.io-limbo'
 document.body.appendChild(script)`,
         },
         {
-          label: 'nanogames.io - hash dice',
-          value: `const BOT_URL = '${api}'
-var script = document.createElement('script')
-script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/nanogames-hash-dice'
-document.body.appendChild(script)`,
-        },
-        {
           label: 'paradice.in - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
@@ -426,14 +418,6 @@ script.type = 'text/javascript'
 script.src = BOT_URL+'/bot/init/stake-limbo-emulator'
 document.body.appendChild(script)`,
         },
-        //         {
-        //           label: 'starbets.io - dice',
-        //           value: `const BOT_URL = '${api}'
-        // var script = document.createElement('script')
-        // script.type = 'text/javascript'
-        // script.src = BOT_URL+'/bot/init/starbets.io-dice'
-        // document.body.appendChild(script)`,
-        //         },
         {
           label: 'trustdice.win - dice',
           value: `const BOT_URL = '${api}'
