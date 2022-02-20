@@ -1,6 +1,6 @@
 const api =
-  process.env.NODE_ENV == 'development'
-    ? 'http://localhost:8005'
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8000'
     : window.location.origin
 
 // console.log(process.env.NODE_ENV)

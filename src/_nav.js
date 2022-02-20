@@ -5,7 +5,7 @@ export default [
   },
   {
     component: 'CNavItem',
-    name: 'Get started',
+    name: 'Get Started',
     to: '/get-started',
     icon: 'cil-book',
   },
