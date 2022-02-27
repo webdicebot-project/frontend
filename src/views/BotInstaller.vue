@@ -60,13 +60,9 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
-              <CListGroup>
-                <CListGroupItem>
-                  <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
-                    https://youtu.be/taZAgwbN9rk
-                  </a>
-                </CListGroupItem>
-              </CListGroup>
+              <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
+                How to use WebDiceBot.Xyz?
+              </a>
             </CAccordionBody>
           </CAccordionItem>
 
