@@ -60,8 +60,9 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
+              View video:
               <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
-                How to use WebDiceBot.Xyz?
+                https://youtu.be/taZAgwbN9rk
               </a>
             </CAccordionBody>
           </CAccordionItem>
@@ -84,7 +85,7 @@
 
           <CAccordionItem :item-key="4">
             <CAccordionHeader>
-              Why betfury.io have error Join room first?
+              Why betfury.io alert: "Join room first"?
             </CAccordionHeader>
             <CAccordionBody>
               In betfury.io, please installer bot at main page (only betfury.io,
@@ -94,7 +95,7 @@
 
           <CAccordionItem :item-key="5">
             <CAccordionHeader>
-              Why betfury.io have stop after some bet?
+              Why betfury.io stop after some bet?
             </CAccordionHeader>
             <CAccordionBody>
               That is rate-limit request bet by betfury. Add sleep(0.2) below
@@ -104,7 +105,7 @@
 
           <CAccordionItem :item-key="6">
             <CAccordionHeader>
-              Why stake.com or primedice.com show alert: "get new pair of seed"?
+              Why stake.com or primedice.com alert: "Get new pair of seed"?
             </CAccordionHeader>
             <CAccordionBody>
               Add 'resetseed()' function in to your script below dobet() line
