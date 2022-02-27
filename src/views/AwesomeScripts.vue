@@ -3,6 +3,8 @@
     <CCard class="mb-4">
       <CCardBody>
         <CListGroup class="mb-3">
+          <p class="small">* Click to copy link raw script from github</p>
+
           <CListGroupItem v-for="url in urls" :key="url.title">
             <span
               class="copy text-primary"
@@ -21,8 +23,6 @@
             Truong Trieu Luan
           </a>
         </CAlert>
-
-        <p class="small">* Click to copy link raw script from github</p>
       </CCardBody>
     </CCard>
   </div>

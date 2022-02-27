@@ -19,6 +19,11 @@ export default {
 <style lang="scss">
 // Import Main styles for this application
 @import 'styles/style';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+#app {
+  font-family: 'Fredoka', sans-serif;
+}
 
 a {
   text-decoration: none;

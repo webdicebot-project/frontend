@@ -27,6 +27,17 @@
         </div>
       </CCardBody>
     </CCard>
+
+    <!-- <CCard class="mb-4">
+      <CCardBody>
+        <h5>From 29/02/2022 to 29/03/2022</h5>
+        <ul class="list-group">
+          <li class="list-group-item">Buy 30 days license -> discount 5%</li>
+          <li class="list-group-item">Buy 180 days license -> discount 10%</li>
+          <li class="list-group-item">Buy 365 days license -> discount 25%</li>
+        </ul>
+      </CCardBody>
+    </CCard> -->
   </div>
 </template>
 
@@ -56,7 +67,23 @@ export default {
     price() {
       const { usd } = this.$store.state.priceTrx
       const pricePerDay = 2 / usd / 10
-      return String(Number(this.limit * pricePerDay + 1).toFixed(6))
+      let discountPercent = 0
+      let licensePrice = 0
+      switch (Number(this.limit)) {
+        case 30:
+          discountPercent = 5
+          break
+        case 180:
+          discountPercent = 10
+          break
+        case 365:
+          discountPercent = 25
+          break
+      }
+      licensePrice = Number(this.limit * pricePerDay + 1).toFixed(6)
+      if (discountPercent > 0)
+        licensePrice = licensePrice - (licensePrice * discountPercent) / 100
+      return String(licensePrice)
     },
   },
   methods: {
