@@ -62,13 +62,8 @@
             <CAccordionBody>
               <CListGroup>
                 <CListGroupItem>
-                  <a href="https://youtu.be/SghrWAdtHJE" target="_blank">
-                    How to use Installer?
-                  </a>
-                </CListGroupItem>
-                <CListGroupItem>
-                  <a href="https://youtu.be/21QMgJkDMH0" target="_blank">
-                    How to use Emulator?
+                  <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
+                    https://youtu.be/taZAgwbN9rk
                   </a>
                 </CListGroupItem>
               </CListGroup>
