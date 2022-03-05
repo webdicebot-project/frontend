@@ -2,6 +2,24 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        <h4>How it work?</h4>
+
+        <strong>1. Make Interface</strong>
+        <p>Bot interface maked directly on dice sites after you install</p>
+
+        <strong>2. Read Script</strong>
+        <p>Bot will read your dice script (Lua or Javascript) on script box</p>
+
+        <strong>3. Auto Betting</strong>
+        <p>
+          Betting base on your dice script, earning or losing depend on script
+          you have
+        </p>
+      </CCardBody>
+    </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
         <h4>Terms of use</h4>
 
         <p>
@@ -15,7 +33,7 @@
 1. You must know what is dice, dice bot, dice script
 2. You must know the Lua language (v5.3) or Javascript language for make dice script
 3. You must control your crypto currency in dice
-4. You must have license when use WebDiceBot.Xyz
+4. You must have license when use dice bot of WebDiceBot.Xyz
 5. License can use for all account, all dice sites and all devices of you
 6. Upgrade level max of security (strong password, 2FA, etc..) for your account at all dice sites
 7. Updating...</pre
