@@ -2,6 +2,17 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        <p>From 00:00 07/03/2022 (GMT+7) to 23:59 14/03/2022 (GMT+7)</p>
+        <ul class="list-group">
+          <li class="list-group-item">Buy 30 days license -> discount 5%</li>
+          <li class="list-group-item">Buy 180 days license -> discount 10%</li>
+          <li class="list-group-item">Buy 365 days license -> discount 25%</li>
+        </ul>
+      </CCardBody>
+    </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
         <CSpinner v-if="isLoading" />
 
         <div v-else>
@@ -27,17 +38,6 @@
         </div>
       </CCardBody>
     </CCard>
-
-    <!-- <CCard class="mb-4">
-      <CCardBody>
-        <h5>From 29/02/2022 to 29/03/2022</h5>
-        <ul class="list-group">
-          <li class="list-group-item">Buy 30 days license -> discount 5%</li>
-          <li class="list-group-item">Buy 180 days license -> discount 10%</li>
-          <li class="list-group-item">Buy 365 days license -> discount 25%</li>
-        </ul>
-      </CCardBody>
-    </CCard> -->
   </div>
 </template>
 
