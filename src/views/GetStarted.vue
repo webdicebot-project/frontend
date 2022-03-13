@@ -2,24 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>How it work?</h4>
-
-        <strong>1. Make Interface</strong>
-        <p>Bot interface maked directly on dice sites after you install</p>
-
-        <strong>2. Read Script</strong>
-        <p>Bot will read your dice script (Lua or Javascript) on script box</p>
-
-        <strong>3. Auto Betting</strong>
-        <p>
-          Betting base on your dice script, earning or losing depend on script
-          you have
-        </p>
-      </CCardBody>
-    </CCard>
-
-    <CCard class="mb-4">
-      <CCardBody>
         <h4>Terms of use</h4>
 
         <p>
