@@ -2,17 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <p>From 00:00 07/03/2022 (GMT+7) to 23:59 14/03/2022 (GMT+7)</p>
-        <ul class="list-group">
-          <li class="list-group-item">Buy 30 days license -> discount 5%</li>
-          <li class="list-group-item">Buy 180 days license -> discount 10%</li>
-          <li class="list-group-item">Buy 365 days license -> discount 25%</li>
-        </ul>
-      </CCardBody>
-    </CCard>
-
-    <CCard class="mb-4">
-      <CCardBody>
         <CSpinner v-if="isLoading" />
 
         <div v-else>
@@ -57,6 +46,7 @@ export default {
           freeNetUsed: 0,
         },
       },
+      discountActive: false,
       limit: '10',
     }
   },
@@ -67,8 +57,8 @@ export default {
     price() {
       const { usd } = this.$store.state.priceTrx
       const pricePerDay = 2 / usd / 10
+      let licensePrice = Number(this.limit * pricePerDay + 1).toFixed(6)
       let discountPercent = 0
-      let licensePrice = 0
       switch (Number(this.limit)) {
         case 30:
           discountPercent = 5
@@ -80,8 +70,7 @@ export default {
           discountPercent = 25
           break
       }
-      licensePrice = Number(this.limit * pricePerDay + 1).toFixed(6)
-      if (discountPercent > 0)
+      if (this.discountActive)
         licensePrice = licensePrice - (licensePrice * discountPercent) / 100
       return String(licensePrice)
     },
