@@ -379,6 +379,14 @@ script.src = BOT_URL+'/bot/init/primdice.com-emulator'
 document.body.appendChild(script)`,
         },
         {
+          label: 'sicodice.com',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/sicodice.com'
+document.body.appendChild(script)`,
+        },
+        {
           label: 'stake.com - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
