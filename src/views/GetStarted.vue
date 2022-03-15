@@ -30,6 +30,10 @@
         <pre>1. Chat with <a :href="urlTelegramBot" target="_blank">Telegram Bot</a> to create your profile then <router-link to="/pages/login">Login</router-link> and <router-link to="/buy-license">Buy License</router-link>
 2. Copy installer script from <router-link to="/bot-installer">Bot Installer</router-link>
 3. Paste to console tab of browser developer tool at dice site</pre>
+        See video:
+        <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
+          https://youtu.be/taZAgwbN9rk
+        </a>
       </CCardBody>
     </CCard>
 

@@ -60,7 +60,7 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
-              View video:
+              See video:
               <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
                 https://youtu.be/taZAgwbN9rk
               </a>
