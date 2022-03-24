@@ -347,6 +347,14 @@ script.src = BOT_URL+'/bot/init/megaplay.io-dice'
 document.body.appendChild(script)`,
         },
         {
+          label: 'megaplay.io - limbo',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/megaplay.io-limbo'
+document.body.appendChild(script)`,
+        },
+        {
           label: 'paradice.in - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
