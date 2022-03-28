@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      items: 0,
+      items: [],
     }
   },
   created() {

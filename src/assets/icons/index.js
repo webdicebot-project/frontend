@@ -14,6 +14,7 @@ import {
   cilHistory,
   cilCopy,
   cilStar,
+  cilChartLine,
 } from '@coreui/icons'
 
 export const iconsSet = Object.assign({
@@ -32,4 +33,5 @@ export const iconsSet = Object.assign({
   cilHistory,
   cilCopy,
   cilStar,
+  cilChartLine,
 })
