@@ -45,14 +45,4 @@ export default [
     to: '/pages/logout',
     icon: 'cil-account-logout',
   },
-  {
-    component: 'CNavTitle',
-    name: 'Admin',
-  },
-  {
-    component: 'CNavItem',
-    name: 'Income',
-    to: '/income',
-    icon: 'cil-chart-line',
-  },
 ]

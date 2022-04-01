@@ -45,12 +45,6 @@ const routes = [
         meta: { requiresAuth: true },
         component: () => import('@/views/MyWallet.vue'),
       },
-      {
-        path: '/income',
-        name: 'Income',
-        meta: { requiresAuth: true },
-        component: () => import('@/views/Income.vue'),
-      },
     ],
   },
   {
