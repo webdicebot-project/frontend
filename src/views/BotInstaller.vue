@@ -251,6 +251,14 @@ script.src = BOT_URL+'/bot/init/duckdice.io-bonuses'
 document.body.appendChild(script)`,
         },
         {
+          label: 'duckdice.io - easter',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/duckdice.io-easter'
+document.body.appendChild(script)`,
+        },
+        {
           label: 'duckdice.io - faucet',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
