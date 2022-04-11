@@ -146,14 +146,14 @@ script.type = 'text/javascript'
 script.src = BOT_URL+'/bot/init/betfury-limbo'
 document.body.appendChild(script)`,
         },
-        {
-          label: 'betgalaxy.io - dice',
-          value: `const BOT_URL = '${api}'
-var script = document.createElement('script')
-script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/betgalaxy.io-dice'
-document.body.appendChild(script)`,
-        },
+//         {
+//           label: 'betgalaxy.io - dice',
+//           value: `const BOT_URL = '${api}'
+// var script = document.createElement('script')
+// script.type = 'text/javascript'
+// script.src = BOT_URL+'/bot/init/betgalaxy.io-dice'
+// document.body.appendChild(script)`,
+//         },
         {
           label: 'betking.io',
           value: `const BOT_URL = '${api}'
