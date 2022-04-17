@@ -60,10 +60,10 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
-              See video:
-              <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
-                https://youtu.be/taZAgwbN9rk
-              </a>
+              <video class="w-100" controls>
+                <source :src="$options.video" type="video/mp4" />
+                Your browser does not support the video tag
+              </video>
             </CAccordionBody>
           </CAccordionItem>
 
@@ -121,8 +121,10 @@
 
 <script>
 import api from '@/configs/api'
+import video from '@/assets/Video_2022-04-17_194842.mp4'
 
 export default {
+  video,
   data() {
     return {
       bots: [
@@ -146,14 +148,14 @@ script.type = 'text/javascript'
 script.src = BOT_URL+'/bot/init/betfury-limbo'
 document.body.appendChild(script)`,
         },
-//         {
-//           label: 'betgalaxy.io - dice',
-//           value: `const BOT_URL = '${api}'
-// var script = document.createElement('script')
-// script.type = 'text/javascript'
-// script.src = BOT_URL+'/bot/init/betgalaxy.io-dice'
-// document.body.appendChild(script)`,
-//         },
+        //         {
+        //           label: 'betgalaxy.io - dice',
+        //           value: `const BOT_URL = '${api}'
+        // var script = document.createElement('script')
+        // script.type = 'text/javascript'
+        // script.src = BOT_URL+'/bot/init/betgalaxy.io-dice'
+        // document.body.appendChild(script)`,
+        //         },
         {
           label: 'betking.io',
           value: `const BOT_URL = '${api}'
