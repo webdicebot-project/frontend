@@ -461,6 +461,14 @@ script.src = BOT_URL+'/bot/init/windice.io-dice'
 document.body.appendChild(script)`,
         },
         {
+          label: 'wintomato.com - dice',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/wintomato.com-dice'
+document.body.appendChild(script)`,
+        },
+        {
           label: 'wolf.bet - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
