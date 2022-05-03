@@ -213,6 +213,14 @@ script.src = BOT_URL+'/bot/init/casinoroyale-dice-classic'
 document.body.appendChild(script)`,
         },
         {
+          label: 'chips.gg - dice',
+          value: `const BOT_URL = '${api}'
+var script = document.createElement('script')
+script.type = 'text/javascript'
+script.src = BOT_URL+'/bot/init/chips.gg-dice'
+document.body.appendChild(script)`,
+        },
+        {
           label: 'crypto.games - dice',
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
