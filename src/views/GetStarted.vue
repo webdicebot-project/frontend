@@ -31,8 +31,8 @@
 2. Copy installer script from <router-link to="/bot-installer">Bot Installer</router-link>
 3. Paste to console tab of browser developer tool at dice site</pre>
         See video:
-        <a href="https://youtu.be/taZAgwbN9rk" target="_blank">
-          https://youtu.be/taZAgwbN9rk
+        <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
+          https://youtu.be/8gLgMJJWz-o
         </a>
       </CCardBody>
     </CCard>

@@ -60,10 +60,10 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
-              <video class="w-100" controls>
-                <source :src="$options.video" type="video/mp4" />
-                Your browser does not support the video tag
-              </video>
+              See video:
+              <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
+                https://youtu.be/8gLgMJJWz-o
+              </a>
             </CAccordionBody>
           </CAccordionItem>
 
