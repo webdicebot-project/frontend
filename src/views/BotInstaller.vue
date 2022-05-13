@@ -148,22 +148,6 @@ script.type = 'text/javascript'
 script.src = BOT_URL+'/bot/init/betfury-limbo'
 document.body.appendChild(script)`,
         },
-        //         {
-        //           label: 'betgalaxy.io - dice',
-        //           value: `const BOT_URL = '${api}'
-        // var script = document.createElement('script')
-        // script.type = 'text/javascript'
-        // script.src = BOT_URL+'/bot/init/betgalaxy.io-dice'
-        // document.body.appendChild(script)`,
-        //         },
-        {
-          label: 'betking.io',
-          value: `const BOT_URL = '${api}'
-var script = document.createElement('script')
-script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/betking.io'
-document.body.appendChild(script)`,
-        },
         {
           label: 'bitdice.me - dice',
           value: `const BOT_URL = '${api}'
@@ -193,7 +177,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/bitsler.com-twist'
+script.src = BOT_URL+'/bot/init/bitsler-twist'
 document.body.appendChild(script)`,
         },
         {
@@ -217,7 +201,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/chips.gg-dice'
+script.src = BOT_URL+'/bot/init/chips-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -233,7 +217,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/cryptodicecasino.com-dice'
+script.src = BOT_URL+'/bot/init/cryptodicecasino-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -257,7 +241,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/duckdice.io-bonuses'
+script.src = BOT_URL+'/bot/init/duckdice-bonuses'
 document.body.appendChild(script)`,
         },
         {
@@ -265,7 +249,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/duckdice.io-easter'
+script.src = BOT_URL+'/bot/init/duckdice-easter'
 document.body.appendChild(script)`,
         },
         {
@@ -273,7 +257,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/duckdice.io-faucet'
+script.src = BOT_URL+'/bot/init/duckdice-faucet'
 document.body.appendChild(script)`,
         },
         {
@@ -281,7 +265,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/duckdice.io-main'
+script.src = BOT_URL+'/bot/init/duckdice-main'
 document.body.appendChild(script)`,
         },
         {
@@ -289,7 +273,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/duckdice.io-xmas'
+script.src = BOT_URL+'/bot/init/duckdice-xmas'
 document.body.appendChild(script)`,
         },
         {
@@ -297,7 +281,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/faucetpay.io-dice'
+script.src = BOT_URL+'/bot/init/faucetpay-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -305,7 +289,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/faucetpay.io-limbo'
+script.src = BOT_URL+'/bot/init/faucetpay-limbo'
 document.body.appendChild(script)`,
         },
         {
@@ -321,7 +305,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/jacksclub.io-blaze'
+script.src = BOT_URL+'/bot/init/jacksclub-blaze'
 document.body.appendChild(script)`,
         },
         {
@@ -329,7 +313,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/jacksclub.io-dice'
+script.src = BOT_URL+'/bot/init/jacksclub-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -337,7 +321,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/jacksclub.io-wheel'
+script.src = BOT_URL+'/bot/init/jacksclub-wheel'
 document.body.appendChild(script)`,
         },
         {
@@ -345,7 +329,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/luckydiamond.io-dice'
+script.src = BOT_URL+'/bot/init/luckydiamond-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -353,7 +337,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/luckydiamond.io-limbo'
+script.src = BOT_URL+'/bot/init/luckydiamond-limbo'
 document.body.appendChild(script)`,
         },
         {
@@ -361,7 +345,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/megaplay.io-dice'
+script.src = BOT_URL+'/bot/init/megaplay-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -369,7 +353,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/megaplay.io-limbo'
+script.src = BOT_URL+'/bot/init/megaplay-limbo'
 document.body.appendChild(script)`,
         },
         {
@@ -385,7 +369,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/pasino.com-hash-dice'
+script.src = BOT_URL+'/bot/init/pasino-hash-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -393,7 +377,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/pasino.com-limbo'
+script.src = BOT_URL+'/bot/init/pasino-limbo'
 document.body.appendChild(script)`,
         },
         {
@@ -409,7 +393,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/primdice.com-emulator'
+script.src = BOT_URL+'/bot/init/primdice-emulator'
 document.body.appendChild(script)`,
         },
         {
@@ -417,7 +401,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/sicodice.com'
+script.src = BOT_URL+'/bot/init/sicodice'
 document.body.appendChild(script)`,
         },
         {
@@ -465,7 +449,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/windice.io-dice'
+script.src = BOT_URL+'/bot/init/windice-dice'
 document.body.appendChild(script)`,
         },
         {
@@ -473,7 +457,7 @@ document.body.appendChild(script)`,
           value: `const BOT_URL = '${api}'
 var script = document.createElement('script')
 script.type = 'text/javascript'
-script.src = BOT_URL+'/bot/init/wintomato.com-dice'
+script.src = BOT_URL+'/bot/init/wintomato-dice'
 document.body.appendChild(script)`,
         },
         {
