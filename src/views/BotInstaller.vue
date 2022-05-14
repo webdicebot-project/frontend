@@ -13,7 +13,7 @@
         </div>
 
         <div class="mb-3">
-          <CFormTextarea rows="5" v-model="installer"></CFormTextarea>
+          <CFormTextarea rows="7" v-model="installer"></CFormTextarea>
         </div>
 
         <div class="d-grid gap-2">
