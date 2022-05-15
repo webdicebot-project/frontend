@@ -64,6 +64,8 @@
               <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
                 https://youtu.be/8gLgMJJWz-o
               </a>
+              <br />
+              Refresh site if have any error bot
             </CAccordionBody>
           </CAccordionItem>
 
@@ -120,6 +122,7 @@
 </template>
 
 <script>
+import api from '@/configs/api'
 import bots from './bots'
 
 export default {
@@ -131,7 +134,14 @@ export default {
   },
   methods: {
     changeBot(e) {
-      this.installer = e.target.value
+      this.installer =
+        `const BOT_API = '${api}';\n` +
+        e.target.value +
+        `\n(async function () {
+await fetch(BOT_API + '/bot/init')
+  .then((response) => response.text())
+  .then((txt) => eval(txt))
+})();`
     },
   },
 }
