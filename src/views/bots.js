@@ -96,10 +96,6 @@ const bots = [
     value: `const DICE_SITE = 'jacksclub-dice';`,
   },
   {
-    label: 'jacksclub.io - wheel (work on emulator)',
-    value: `const DICE_SITE = 'jacksclub-wheel';`,
-  },
-  {
     label: 'luckydiamond.io - dice',
     value: `const DICE_SITE = 'luckydiamond-dice';`,
   },
@@ -154,10 +150,6 @@ const bots = [
   {
     label: 'stake.com - limbo (work on emulator)',
     value: `const DICE_SITE = 'stake-limbo-emulator';`,
-  },
-  {
-    label: 'trustdice.win - dice',
-    value: `const DICE_SITE = 'trustdice-dice';`,
   },
   {
     label: 'windice.io - dice',
