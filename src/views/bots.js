@@ -88,6 +88,10 @@ const bots = [
     value: `const DICE_SITE = 'freebitco';`,
   },
   {
+    label: 'free-doge.io',
+    value: `const DICE_SITE = 'free-doge';`,
+  },
+  {
     label: 'jacksclub.io - blaze (work on emulator)',
     value: `const DICE_SITE = 'jacksclub-blaze';`,
   },
