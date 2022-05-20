@@ -35,17 +35,7 @@
         <CListGroup>
           <CListGroupItem>
             <a href="https://jacksclub.webdicebot.xyz" target="_blank">
-              jacksclub.io emulator
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a href="https://primedice.webdicebot.xyz" target="_blank">
-              primedice.com emulator
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a href="https://stake.webdicebot.xyz" target="_blank">
-              stake.com emulator
+              jacksclub.io
             </a>
           </CListGroupItem>
         </CListGroup>
@@ -60,27 +50,25 @@
           <CAccordionItem :item-key="1">
             <CAccordionHeader> How to use? </CAccordionHeader>
             <CAccordionBody>
-              See video:
+              - See video:
               <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
                 https://youtu.be/8gLgMJJWz-o
               </a>
-              <br />
-              Refresh site if have any error bot
             </CAccordionBody>
           </CAccordionItem>
 
           <CAccordionItem :item-key="2">
             <CAccordionHeader> What is Emulator? </CAccordionHeader>
             <CAccordionBody>
-              This is the place to install bot of some sites. Because some sites
-              not allow install bot direct
+              - Some dice sites not accept install bot direct, emulator is the
+              place to install bot for them
             </CAccordionBody>
           </CAccordionItem>
 
           <CAccordionItem :item-key="3">
             <CAccordionHeader> Why dice script not work? </CAccordionHeader>
             <CAccordionBody>
-              Dice script must follow syntax of programming language. In Lua
+              - Dice script must follow syntax of programming language. In Lua
               mode, your script must follow syntax of Lua v5.3
             </CAccordionBody>
           </CAccordionItem>
@@ -90,8 +78,8 @@
               Why betfury.io alert: "Join room first"?
             </CAccordionHeader>
             <CAccordionBody>
-              In betfury.io, please installer bot at main page (only betfury.io,
-              not betfury.io/inhouse/dice or betfury.io/inhouse/limbo)
+              - Please install bot at main page (only at betfury.io, not
+              betfury.io/inhouse/dice or betfury.io/inhouse/limbo)
             </CAccordionBody>
           </CAccordionItem>
 
@@ -100,17 +88,18 @@
               Why betfury.io stop after some bet?
             </CAccordionHeader>
             <CAccordionBody>
-              That is rate-limit request bet by betfury. Add sleep(0.2) below
-              line dobet() in your script
+              - That is rate-limit request bet. Add sleep function below line
+              dobet() in your script. Example:
+              <pre>sleep(0.2)</pre>
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="6">
+          <CAccordionItem :item-key="7">
             <CAccordionHeader>
               Why stake.com or primedice.com alert: "Get new pair of seed"?
             </CAccordionHeader>
             <CAccordionBody>
-              Add 'resetseed()' function in to your script below dobet() line
+              - Add 'resetseed()' function in to your script below dobet() line
               with a condition. Example:
               <pre>if (bets % 1000 = 0) then resetseed() end</pre>
             </CAccordionBody>
