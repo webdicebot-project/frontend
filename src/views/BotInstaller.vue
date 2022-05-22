@@ -73,7 +73,7 @@
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="7">
+          <CAccordionItem :item-key="4">
             <CAccordionHeader>
               Why stake.com or primedice.com alert: "Get new pair of seed"?
             </CAccordionHeader>
