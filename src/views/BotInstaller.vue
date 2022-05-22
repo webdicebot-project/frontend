@@ -73,27 +73,6 @@
             </CAccordionBody>
           </CAccordionItem>
 
-          <CAccordionItem :item-key="4">
-            <CAccordionHeader>
-              Why betfury.io alert: "Join room first"?
-            </CAccordionHeader>
-            <CAccordionBody>
-              - Please install bot at main page (only at betfury.io, not
-              betfury.io/inhouse/dice or betfury.io/inhouse/limbo)
-            </CAccordionBody>
-          </CAccordionItem>
-
-          <CAccordionItem :item-key="5">
-            <CAccordionHeader>
-              Why betfury.io stop after some bet?
-            </CAccordionHeader>
-            <CAccordionBody>
-              - That is rate-limit request bet. Add sleep function below line
-              dobet() in your script. Example:
-              <pre>sleep(0.2)</pre>
-            </CAccordionBody>
-          </CAccordionItem>
-
           <CAccordionItem :item-key="7">
             <CAccordionHeader>
               Why stake.com or primedice.com alert: "Get new pair of seed"?
