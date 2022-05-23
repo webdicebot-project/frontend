@@ -12,10 +12,6 @@ const bots = [
     value: `const DICE_SITE = 'betfury-limbo';`,
   },
   {
-    label: 'bitdice.me - dice (use on emulator)',
-    value: `const DICE_SITE = 'bitdice';`,
-  },
-  {
     label: 'bitsler.com - boom',
     value: `const DICE_SITE = 'bitsler-boom';`,
   },

@@ -34,11 +34,6 @@
 
         <CListGroup>
           <CListGroupItem>
-            <a href="https://bitdice.webdicebot.xyz" target="_blank">
-              bitdice.me
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
             <a href="https://jacksclub.webdicebot.xyz" target="_blank">
               jacksclub.io
             </a>
