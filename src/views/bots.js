@@ -147,10 +147,10 @@ const bots = [
     label: 'windice.io - dice',
     value: `const DICE_SITE = 'windice-dice';`,
   },
-  // {
-  //   label: 'wintomato.com - dice',
-  //   value: `const DICE_SITE = 'wintomato-dice';`,
-  // },
+  {
+    label: 'wintomato.com - dice',
+    value: `const DICE_SITE = 'wintomato-dice';`,
+  },
   {
     label: 'wolf.bet - dice',
     value: `const DICE_SITE = 'wolf-dice';`,
