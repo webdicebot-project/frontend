@@ -47,16 +47,6 @@
         <h4>FAQ</h4>
 
         <CAccordion>
-          <CAccordionItem :item-key="1">
-            <CAccordionHeader> How to use? </CAccordionHeader>
-            <CAccordionBody>
-              - See video:
-              <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
-                https://youtu.be/8gLgMJJWz-o
-              </a>
-            </CAccordionBody>
-          </CAccordionItem>
-
           <CAccordionItem :item-key="2">
             <CAccordionHeader> What is Emulator? </CAccordionHeader>
             <CAccordionBody>

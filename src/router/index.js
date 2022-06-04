@@ -22,12 +22,6 @@ const routes = [
         component: () => import('@/views/BotInstaller.vue'),
       },
       {
-        path: '/awesome-scripts',
-        name: 'Awesome Scripts',
-        meta: { requiresAuth: true },
-        component: () => import('@/views/AwesomeScripts.vue'),
-      },
-      {
         path: '/buy-license',
         name: 'Buy License',
         meta: { requiresAuth: true },

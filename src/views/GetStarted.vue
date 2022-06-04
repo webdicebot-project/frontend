@@ -26,14 +26,7 @@
     <CCard class="mb-4">
       <CCardBody>
         <h4>How to use?</h4>
-
-        <pre>1. Chat with <a :href="urlTelegramBot" target="_blank">Telegram Bot</a> to create your profile then <router-link to="/pages/login">Login</router-link> and <router-link to="/buy-license">Buy License</router-link>
-2. Copy installer script from <router-link to="/bot-installer">Bot Installer</router-link>
-3. Paste to console tab of browser developer tool at dice site</pre>
-        See video:
-        <a href="https://youtu.be/8gLgMJJWz-o" target="_blank">
-          https://youtu.be/8gLgMJJWz-o
-        </a>
+        <video class="w-100" :src="$options.video" controls></video>
       </CCardBody>
     </CCard>
 
@@ -134,7 +127,10 @@ resettime() : reset run time</pre
 </template>
 
 <script>
+import video from '@/assets/Video_2022-04-17_194842.mp4'
+
 export default {
+  video,
   data() {
     return {
       urlTelegramBot:

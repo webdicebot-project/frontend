@@ -17,12 +17,6 @@ export default [
   },
   {
     component: 'CNavItem',
-    name: 'Awesome Scripts',
-    to: '/awesome-scripts',
-    icon: 'cil-code',
-  },
-  {
-    component: 'CNavItem',
     name: 'Buy License',
     to: '/buy-license',
     icon: 'cil-cart',
