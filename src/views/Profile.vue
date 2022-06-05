@@ -2,7 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Profile</h4>
         <CListGroup>
           <CListGroupItem>
             MemberID: {{ user.idUser }}
