@@ -35,6 +35,12 @@ export default [
   },
   {
     component: 'CNavItem',
+    name: 'Profile',
+    to: '/profile',
+    icon: 'cil-user',
+  },
+  {
+    component: 'CNavItem',
     name: 'Logout',
     to: '/pages/logout',
     icon: 'cil-account-logout',

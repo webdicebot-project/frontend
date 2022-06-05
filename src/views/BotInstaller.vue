@@ -39,6 +39,11 @@
             </a>
           </CListGroupItem>
         </CListGroup>
+
+        <p class="mt-3 small">
+          * Some dice sites not accept install bot direct, emulator is the place
+          to install bot for them
+        </p>
       </CCardBody>
     </CCard>
 
@@ -47,30 +52,11 @@
         <h4>FAQ</h4>
 
         <CAccordion>
-          <CAccordionItem :item-key="2">
-            <CAccordionHeader> What is Emulator? </CAccordionHeader>
-            <CAccordionBody>
-              - Some dice sites not accept install bot direct, emulator is the
-              place to install bot for them
-            </CAccordionBody>
-          </CAccordionItem>
-
-          <CAccordionItem :item-key="3">
+          <CAccordionItem :item-key="1">
             <CAccordionHeader> Why dice script not work? </CAccordionHeader>
             <CAccordionBody>
               - Dice script must follow syntax of programming language. In Lua
               mode, your script must follow syntax of Lua v5.3
-            </CAccordionBody>
-          </CAccordionItem>
-
-          <CAccordionItem :item-key="4">
-            <CAccordionHeader>
-              Why stake.com or primedice.com alert: "Get new pair of seed"?
-            </CAccordionHeader>
-            <CAccordionBody>
-              - Add 'resetseed()' function in to your script below dobet() line
-              with a condition. Example:
-              <pre>if (bets % 1000 = 0) then resetseed() end</pre>
             </CAccordionBody>
           </CAccordionItem>
         </CAccordion>
