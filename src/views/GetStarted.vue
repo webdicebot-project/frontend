@@ -2,6 +2,13 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        <h4>How to use?</h4>
+        <video class="w-100" :src="$options.video" controls></video>
+      </CCardBody>
+    </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
         <h4>Terms of use</h4>
 
         <p>
@@ -20,13 +27,6 @@
 6. Upgrade level max of security (strong password, 2FA, etc..) for your account at all dice sites
 7. Updating...</pre
         >
-      </CCardBody>
-    </CCard>
-
-    <CCard class="mb-4">
-      <CCardBody>
-        <h4>How to use?</h4>
-        <video class="w-100" :src="$options.video" controls></video>
       </CCardBody>
     </CCard>
 
@@ -119,6 +119,7 @@ resetstats() : reset stats in round
 ching() : alert with sound
 checkbalance() : check current balance if new deposit
 sleep(n) : play bet after n seconds (only work at lua mode)
+log(m): log your m message to logs tab
 resettime() : reset run time</pre
         >
       </CCardBody>

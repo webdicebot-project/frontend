@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       user: {
-        idUser: '',
-        createdAt: '',
+        idUser: '?',
+        createdAt: '2021-12-30T20:19:14.598+00:00',
         permission: 0,
       },
     }
