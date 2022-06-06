@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <h1>Goodbye!</h1>
-    Redirect to Get started in {{ s }}s
+    Redirect to Get Started in {{ s }}s
   </div>
 </template>
 
