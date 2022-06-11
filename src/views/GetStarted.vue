@@ -23,8 +23,8 @@
 2. You must know the Lua language (v5.3) or Javascript language for make dice script
 3. You must control your crypto currency in dice
 4. You must have license when use dice bot of WebDiceBot.Xyz
-5. License can use for all account, all dice sites and all devices of you
-6. Upgrade level max of security (strong password, 2FA, etc..) for your account at all dice sites
+5. A license can use for all account, all dice sites and all devices of you
+6. Security enhancement (strong password, 2FA, etc..) for your accounts at all dice sites
 7. Updating...</pre
         >
       </CCardBody>
