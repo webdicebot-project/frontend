@@ -109,6 +109,16 @@
                 {{ wallet.address }}
                 <CIcon name="cil-copy" />
               </span>
+              <br />
+              <span>
+                <a
+                  :href="$options.explorer + 'address/' + wallet.address"
+                  target="_blank"
+                >
+                  View on explorer
+                  <CIcon name="cil-external-link" />
+                </a>
+              </span>
             </div>
           </CCardBody>
         </CCard>
@@ -184,12 +194,14 @@ import { mapActions } from 'vuex'
 import axios from 'axios'
 import QRCodeVue3 from 'qrcode-vue3'
 import moment from 'moment'
+import explorer from '@/configs/explorer'
 
 export default {
   components: {
     QRCodeVue3,
   },
   moment,
+  explorer,
   data() {
     return {
       isLoading: false,
