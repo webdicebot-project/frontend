@@ -4,6 +4,10 @@ const bots = [
     value: 'Not have installer in this select',
   },
   {
+    label: 'bc.game - classic dice',
+    value: `const DICE_SITE = 'bc-classic-dice';`,
+  },
+  {
     label: 'betfury.io - dice',
     value: `const DICE_SITE = 'betfury-dice';`,
   },
