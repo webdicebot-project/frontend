@@ -16,6 +16,10 @@ const bots = [
     value: `const DICE_SITE = 'betfury-limbo';`,
   },
   {
+    label: 'bit555.io - classic dice',
+    value: `const DICE_SITE = 'bit555-classic-dice';`,
+  },
+  {
     label: 'bitsler.com - boom',
     value: `const DICE_SITE = 'bitsler-boom';`,
   },
@@ -110,6 +114,10 @@ const bots = [
   {
     label: 'megaplay.io - limbo',
     value: `const DICE_SITE = 'megaplay-limbo';`,
+  },
+  {
+    label: 'nanogames.io classic dice',
+    value: `const DICE_SITE = 'nanogames-classic-dice';`,
   },
   {
     label: 'paradice.in - dice',
