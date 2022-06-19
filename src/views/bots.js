@@ -8,6 +8,10 @@ const bots = [
     value: `const DICE_SITE = 'bc-classic-dice';`,
   },
   {
+    label: 'bc.game - hash dice',
+    value: `const DICE_SITE = 'bc-hash-dice';`,
+  },
+  {
     label: 'bc.game - limbo',
     value: `const DICE_SITE = 'bc-limbo';`,
   },
@@ -22,6 +26,10 @@ const bots = [
   {
     label: 'bit555.io - classic dice',
     value: `const DICE_SITE = 'bit555-classic-dice';`,
+  },
+  {
+    label: 'bit555.io - hash dice',
+    value: `const DICE_SITE = 'bit555-hash-dice';`,
   },
   {
     label: 'bit555.io - limbo',
@@ -126,6 +134,10 @@ const bots = [
   {
     label: 'nanogames.io - classic dice',
     value: `const DICE_SITE = 'nanogames-classic-dice';`,
+  },
+  {
+    label: 'nanogames.io - hash dice',
+    value: `const DICE_SITE = 'nanogames-hash-dice';`,
   },
   {
     label: 'nanogames.io - limbo',
