@@ -28,6 +28,12 @@ const routes = [
         component: () => import('@/views/BuyLicense.vue'),
       },
       {
+        path: '/buy-license-v2',
+        name: 'Buy License V2',
+        meta: { requiresAuth: true },
+        component: () => import('@/views/BuyLicenseV2.vue'),
+      },
+      {
         path: '/my-license',
         name: 'My License',
         meta: { requiresAuth: true },
