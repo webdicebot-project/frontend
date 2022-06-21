@@ -32,7 +32,7 @@
               </CTableDataCell>
               <CTableDataCell>{{ item.limit }}</CTableDataCell>
               <CTableDataCell>
-                {{ Number(item.price).toFixed(6) }} TRX
+                {{ Number(item.price / 1e6).toFixed(6) }} TRX
               </CTableDataCell>
               <CTableDataCell>
                 {{
