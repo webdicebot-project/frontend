@@ -2,6 +2,20 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
+        We has make an DApp for payment and have some discount
+        <br />
+        Use at:
+        <a href="https://seller.webdicebot.xyz" target="_blank">
+          https://seller.webdicebot.xyz
+        </a>
+        <br />
+        Open it with
+        <a href="https://tronlink.org" target="_blank">TronLink Wallet</a>
+      </CCardBody>
+    </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
         <CSpinner v-if="isLoading" />
 
         <div v-else>
