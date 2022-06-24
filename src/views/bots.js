@@ -79,10 +79,10 @@ const bots = [
     label: 'duckdice.io - bonuses',
     value: `const DICE_SITE = 'duckdice-bonuses';`,
   },
-  {
-    label: 'duckdice.io - easter',
-    value: `const DICE_SITE = 'duckdice-easter';`,
-  },
+  // {
+  //   label: 'duckdice.io - easter',
+  //   value: `const DICE_SITE = 'duckdice-easter';`,
+  // },
   {
     label: 'duckdice.io - faucet',
     value: `const DICE_SITE = 'duckdice-faucet';`,
@@ -91,10 +91,10 @@ const bots = [
     label: 'duckdice.io - main',
     value: `const DICE_SITE = 'duckdice-main';`,
   },
-  {
-    label: 'duckdice.io - xmas',
-    value: `const DICE_SITE = 'duckdice-xmas';`,
-  },
+  // {
+  //   label: 'duckdice.io - xmas',
+  //   value: `const DICE_SITE = 'duckdice-xmas';`,
+  // },
   {
     label: 'faucetpay.io - dice',
     value: `const DICE_SITE = 'faucetpay-dice';`,
@@ -183,10 +183,10 @@ const bots = [
     label: 'wolf.bet - dice',
     value: `const DICE_SITE = 'wolf-dice';`,
   },
-  {
-    label: 'wolf.bet - limbo',
-    value: `const DICE_SITE = 'wolf-limbo';`,
-  },
+  // {
+  //   label: 'wolf.bet - limbo',
+  //   value: `const DICE_SITE = 'wolf-limbo';`,
+  // },
 ]
 
 export default bots

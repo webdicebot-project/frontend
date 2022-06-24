@@ -39,15 +39,13 @@
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://wolf.webdicebot.xyz" target="_blank">
-              wolf.bet
-            </a>
+            <a href="https://wolf.webdicebot.xyz" target="_blank"> wolf.bet </a>
           </CListGroupItem>
         </CListGroup>
 
         <p class="mt-3 small">
-          * Some dice sites not accept install bot direct, emulator is the place
-          to install bot for them
+          * Some dice sites not accept install bot direct (Content Security
+          Policy), emulator is the place to install bot for them
         </p>
       </CCardBody>
     </CCard>
