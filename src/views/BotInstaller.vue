@@ -38,6 +38,11 @@
               jacksclub.io
             </a>
           </CListGroupItem>
+          <CListGroupItem>
+            <a href="https://wolft.webdicebot.xyz" target="_blank">
+              wolft.bet
+            </a>
+          </CListGroupItem>
         </CListGroup>
 
         <p class="mt-3 small">
