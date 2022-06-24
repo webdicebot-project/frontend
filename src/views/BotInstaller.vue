@@ -39,8 +39,8 @@
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://wolft.webdicebot.xyz" target="_blank">
-              wolft.bet
+            <a href="https://wolf.webdicebot.xyz" target="_blank">
+              wolf.bet
             </a>
           </CListGroupItem>
         </CListGroup>
