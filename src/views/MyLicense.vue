@@ -2,9 +2,7 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <CSpinner v-if="isLoading" />
-
-        <CTable v-else responsive>
+        <CTable responsive>
           <CTableHead>
             <CTableRow>
               <CTableHeaderCell scope="col">Time</CTableHeaderCell>
@@ -58,7 +56,6 @@ export default {
   moment,
   data() {
     return {
-      isLoading: false,
       items: [],
     }
   },
@@ -68,14 +65,11 @@ export default {
   methods: {
     async getMyLicense() {
       try {
-        this.isLoading = true
         const { data } = await axios.get('/license/me')
         // console.log(data)
-        this.isLoading = false
         this.items = data
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

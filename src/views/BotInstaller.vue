@@ -44,8 +44,8 @@
         </CListGroup>
 
         <p class="mt-3 small">
-          * Some dice sites not accept install bot direct (Content Security
-          Policy), emulator is the place to install bot for them
+          Some dice sites not accept install bot direct (Content Security
+          Policy). Emulator is the place to install bot for them
         </p>
       </CCardBody>
     </CCard>
@@ -60,6 +60,14 @@
             <CAccordionBody>
               - Dice script must follow syntax of programming language. In Lua
               mode, your script must follow syntax of Lua v5.3
+              <br />
+              - See awesome scripts at:
+              <a
+                href="https://github.com/webdicebot-project/awesome-scripts"
+                target="_blank"
+              >
+                https://github.com/webdicebot-project/awesome-scripts
+              </a>
             </CAccordionBody>
           </CAccordionItem>
         </CAccordion>

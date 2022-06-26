@@ -2,9 +2,7 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <CSpinner v-if="isLoading" />
-
-        <div v-else>
+        <div>
           <div class="mb-3">
             <CFormLabel>Days</CFormLabel>
             <CFormInput type="number" v-model="limit" />
@@ -19,7 +17,7 @@
           <p>Available balance: {{ wallet.balance }} TRX</p>
 
           <div class="d-grid gap-2">
-            <CButton v-if="isLoading2" disabled>
+            <CButton v-if="isLoading" disabled>
               <CSpinner size="sm" />
             </CButton>
             <CButton v-else color="primary" @click="buy"> Buy </CButton>
@@ -37,14 +35,9 @@ export default {
   data() {
     return {
       isLoading: false,
-      isLoading2: false,
       wallet: {
         address: '',
         balance: 0,
-        bandwidth: {
-          freeNetLimit: 0,
-          freeNetUsed: 0,
-        },
       },
       discountActive: false,
       limit: '10',
@@ -78,14 +71,11 @@ export default {
   methods: {
     async getWallet() {
       try {
-        this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
-        this.isLoading = false
         this.wallet = data
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -99,14 +89,14 @@ export default {
     },
     async buy() {
       try {
-        this.isLoading2 = true
+        this.isLoading = true
         const { data } = await axios.get('/license/buy?limit=' + this.limit)
         // console.log(data)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(data)
       } catch (error) {
         // console.error(error)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

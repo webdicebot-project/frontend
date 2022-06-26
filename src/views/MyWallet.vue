@@ -2,9 +2,7 @@
   <div>
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
-        <CSpinner v-if="isLoading" />
-
-        <div v-else>
+        <div>
           <h2>{{ wallet.balance }} TRX</h2>
 
           <h6>
@@ -31,7 +29,7 @@
       </CCardBody>
     </CCard>
 
-    <CNav variant="pills" role="tablist" class="mb-3">
+    <CNav variant="tabs" role="tablist">
       <CNavItem>
         <CNavLink
           href="javascript:void(0);"
@@ -42,8 +40,7 @@
             }
           "
         >
-          <CIcon name="cil-arrow-circle-bottom" />
-          Deposit
+          <CIcon name="cil-arrow-circle-bottom" size="lg" />
         </CNavLink>
       </CNavItem>
 
@@ -57,8 +54,7 @@
             }
           "
         >
-          <CIcon name="cil-arrow-circle-top" />
-          Withdraw
+          <CIcon name="cil-arrow-circle-top" size="lg" />
         </CNavLink>
       </CNavItem>
 
@@ -72,60 +68,62 @@
             }
           "
         >
-          <CIcon name="cil-history" />
-          Transactions
+          <CIcon name="cil-history" size="lg" />
         </CNavLink>
       </CNavItem>
     </CNav>
 
     <CTabContent class="mb-4">
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
-        <CCard>
+        <CCard class="tab-content">
           <CCardBody class="text-center">
-            <CSpinner v-if="isLoading" />
-
-            <div v-else>
+            <div>
               <p class="small">
                 Only send TRX to this address, 1 confirmation(s) required
                 <br />
                 We do not accept BEP20 from Binance
               </p>
 
-              <QRCodeVue3
-                :value="wallet.address"
-                :width="200"
-                :height="200"
-                :dotsOptions="{
-                  type: 'square',
-                }"
-                class="mb-3"
-              />
+              <div class="mb-3" style="height: 200px">
+                <QRCodeVue3
+                  :value="wallet.address"
+                  :width="200"
+                  :height="200"
+                  :dotsOptions="{
+                    type: 'square',
+                  }"
+                />
+              </div>
 
-              <span
-                class="copy"
-                v-clipboard:copy="wallet.address"
-                v-clipboard:success="onCopy"
-              >
-                {{ wallet.address }}
-                <CIcon name="cil-copy" />
-              </span>
-              <br />
-              <span>
-                <a
-                  :href="$options.explorer + 'address/' + wallet.address"
-                  target="_blank"
+              <div class="mb-3">
+                <span
+                  class="copy"
+                  v-clipboard:copy="wallet.address"
+                  v-clipboard:success="onCopy"
                 >
-                  View on explorer
-                  <CIcon name="cil-external-link" />
-                </a>
-              </span>
+                  {{ wallet.address }}
+                  <CIcon name="cil-copy" />
+                </span>
+              </div>
+
+              <div>
+                <span>
+                  <a
+                    :href="$options.explorer + 'address/' + wallet.address"
+                    target="_blank"
+                  >
+                    View on explorer
+                    <CIcon name="cil-external-link" />
+                  </a>
+                </span>
+              </div>
             </div>
           </CCardBody>
         </CCard>
       </CTabPane>
 
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 2">
-        <CCard>
+        <CCard class="tab-content">
           <CCardBody>
             <div class="mb-3">
               <CFormLabel>Receiving address</CFormLabel>
@@ -143,7 +141,7 @@
             </div>
 
             <div class="d-grid gap-2">
-              <CButton v-if="isLoading2" disabled>
+              <CButton v-if="isLoading" disabled>
                 <CSpinner size="sm" />
               </CButton>
 
@@ -154,7 +152,7 @@
       </CTabPane>
 
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 3">
-        <CCard>
+        <CCard class="tab-content">
           <CCardBody>
             <CTable responsive>
               <CTableHead>
@@ -236,14 +234,11 @@ export default {
     },
     async getWallet() {
       try {
-        this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
-        this.isLoading = false
         this.wallet = data
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -257,19 +252,21 @@ export default {
     },
     async send() {
       try {
-        this.isLoading2 = true
+        if (!this.to || !this.amount)
+          return this.notify('Enter receiving address and amount')
+        this.isLoading = true
         const { data } = await axios.post('/user/wallet/send', {
           to: this.to,
           amount: this.amount,
         })
         // console.log(data)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(data)
         this.to = ''
         this.amount = '0'
       } catch (error) {
         // console.error(error)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -303,4 +300,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.tab-content {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>

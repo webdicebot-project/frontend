@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       user: {
-        idUser: '?',
-        createdAt: '2021-12-30T20:19:14.598+00:00',
+        idUser: '',
+        createdAt: Date.now(),
         permission: 0,
       },
     }
@@ -50,13 +50,11 @@ export default {
     },
     async getProfile() {
       try {
-        this.isLoading = true
         const { data } = await axios.get('/user/profile')
         // console.log(data)
         this.user = data
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
