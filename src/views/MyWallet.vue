@@ -223,6 +223,11 @@ export default {
   created() {
     this.getWallet()
     this.getTransactions()
+
+    setTimeout(() => {
+      this.getWallet()
+      this.getTransactions()
+    }, 6e4)
   },
   methods: {
     ...mapActions(['getPriceTrx']),
