@@ -82,13 +82,12 @@
               </div>
 
               <div class="mb-3">
-                {{ getAddress(wallet.address) }}
-                &nbsp;
                 <span
                   class="copy"
                   v-clipboard:copy="wallet.address"
                   v-clipboard:success="onCopy"
                 >
+                  {{ getAddress(wallet.address) }}
                   <CIcon name="cil-copy" />
                 </span>
                 &nbsp;
@@ -108,7 +107,7 @@
         <CCard class="tab-content">
           <CCardBody>
             <div class="mb-3">
-              <CFormLabel>Address</CFormLabel>
+              <CFormLabel>To</CFormLabel>
               <CFormInput type="text" v-model="to" />
             </div>
 

@@ -20,13 +20,12 @@
                 }}
               </CTableDataCell>
               <CTableDataCell>
-                {{ getLicense(item.license) }}
-                &nbsp;
                 <span
                   class="copy"
                   v-clipboard:copy="item.license"
                   v-clipboard:success="onCopy"
                 >
+                  {{ getLicense(item.license) }}
                   <CIcon name="cil-copy" />
                 </span>
               </CTableDataCell>
