@@ -20,11 +20,13 @@
                 }}
               </CTableDataCell>
               <CTableDataCell>
+                {{ getLicense(item.license) }}
+                &nbsp;
                 <span
                   class="copy"
                   v-clipboard:copy="item.license"
                   v-clipboard:success="onCopy"
-                  >{{ item.license }}
+                >
                   <CIcon name="cil-copy" />
                 </span>
               </CTableDataCell>
@@ -63,6 +65,9 @@ export default {
     this.getMyLicense()
   },
   methods: {
+    getLicense(license) {
+      return license.slice(0, 5) + '...' + license.slice(-5)
+    },
     async getMyLicense() {
       try {
         const { data } = await axios.get('/license/me')

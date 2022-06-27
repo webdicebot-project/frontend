@@ -34,7 +34,7 @@
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Lua dice script</h4>
+            <h4>Lua script</h4>
 
             <pre>
 chance=49.5
@@ -57,7 +57,7 @@ end</pre
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Javascript dice script</h4>
+            <h4>Javascript script</h4>
 
             <pre>
 chance=49.5

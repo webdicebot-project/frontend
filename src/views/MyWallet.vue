@@ -57,20 +57,6 @@
           <CIcon name="cil-arrow-circle-top" size="lg" />
         </CNavLink>
       </CNavItem>
-
-      <CNavItem variant="info">
-        <CNavLink
-          href="javascript:void(0);"
-          :active="tabPaneActiveKey === 3"
-          @click="
-            () => {
-              tabPaneActiveKey = 3
-            }
-          "
-        >
-          <CIcon name="cil-history" size="lg" />
-        </CNavLink>
-      </CNavItem>
     </CNav>
 
     <CTabContent class="mb-4">
@@ -96,26 +82,22 @@
               </div>
 
               <div class="mb-3">
+                {{ getAddress(wallet.address) }}
+                &nbsp;
                 <span
                   class="copy"
                   v-clipboard:copy="wallet.address"
                   v-clipboard:success="onCopy"
                 >
-                  {{ wallet.address }}
                   <CIcon name="cil-copy" />
                 </span>
-              </div>
-
-              <div>
-                <span>
-                  <a
-                    :href="$options.explorer + 'address/' + wallet.address"
-                    target="_blank"
-                  >
-                    View on explorer
-                    <CIcon name="cil-external-link" />
-                  </a>
-                </span>
+                &nbsp;
+                <a
+                  :href="$options.explorer + 'address/' + wallet.address"
+                  target="_blank"
+                >
+                  <CIcon name="cil-external-link" />
+                </a>
               </div>
             </div>
           </CCardBody>
@@ -126,7 +108,7 @@
         <CCard class="tab-content">
           <CCardBody>
             <div class="mb-3">
-              <CFormLabel>Receiving address</CFormLabel>
+              <CFormLabel>Address</CFormLabel>
               <CFormInput type="text" v-model="to" />
             </div>
 
@@ -136,7 +118,7 @@
             </p>
 
             <div class="mb-3">
-              <CFormLabel>Withdraw amount</CFormLabel>
+              <CFormLabel>Amount</CFormLabel>
               <CFormInput type="number" v-model="amount" />
             </div>
 
@@ -147,39 +129,6 @@
 
               <CButton v-else color="primary" @click="send"> Send </CButton>
             </div>
-          </CCardBody>
-        </CCard>
-      </CTabPane>
-
-      <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 3">
-        <CCard class="tab-content">
-          <CCardBody>
-            <CTable responsive>
-              <CTableHead>
-                <CTableRow>
-                  <CTableHeaderCell scope="col">Time</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">From</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">To</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Amount</CTableHeaderCell>
-                </CTableRow>
-              </CTableHead>
-              <CTableBody>
-                <CTableRow v-for="item in transactions" :key="item.time">
-                  <CTableDataCell>
-                    {{
-                      $options
-                        .moment(new Date(item.time))
-                        .format('DD/MM/YYYY HH:mm:ss')
-                    }}
-                  </CTableDataCell>
-                  <CTableDataCell>{{ getAddress(item.from) }}</CTableDataCell>
-                  <CTableDataCell>{{ getAddress(item.to) }}</CTableDataCell>
-                  <CTableDataCell>
-                    {{ item.amount }} {{ String(item.currency).toUpperCase() }}
-                  </CTableDataCell>
-                </CTableRow>
-              </CTableBody>
-            </CTable>
           </CCardBody>
         </CCard>
       </CTabPane>
@@ -203,7 +152,6 @@ export default {
   data() {
     return {
       isLoading: false,
-      isLoading2: false,
       tabPaneActiveKey: 1,
       wallet: {
         address: '',
@@ -213,18 +161,15 @@ export default {
           freeNetUsed: 0,
         },
       },
-      transactions: [],
       to: '',
       amount: '0',
     }
   },
   created() {
     this.getWallet()
-    this.getTransactions()
 
     setTimeout(() => {
       this.getWallet()
-      this.getTransactions()
     }, 6e4)
   },
   methods: {
@@ -267,24 +212,6 @@ export default {
       } catch (error) {
         // console.error(error)
         this.isLoading = false
-        this.notify(error.response.data.message)
-        if (
-          error.response.data.message == 'jwt expired' ||
-          error.response.data.message == 'jwt malformed' ||
-          error.response.data.message == 'invalid signature'
-        ) {
-          this.notify('Session expired')
-          this.logout()
-        }
-      }
-    },
-    async getTransactions() {
-      try {
-        const { data } = await axios.get('/user/wallet/transaction')
-        // console.log(data)
-        this.transactions = data
-      } catch (error) {
-        // console.error(error)
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

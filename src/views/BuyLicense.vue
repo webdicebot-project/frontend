@@ -8,13 +8,13 @@
             <CFormInput type="number" v-model="limit" />
           </div>
 
-          <CFormLabel>Pay amount</CFormLabel>
+          <CFormLabel>Amount</CFormLabel>
           <CInputGroup class="mb-3">
             <CFormInput v-model="price" disabled />
             <CInputGroupText>TRX</CInputGroupText>
           </CInputGroup>
 
-          <p>Available balance: {{ wallet.balance }} TRX</p>
+          <p>Balance: {{ wallet.balance }} TRX</p>
 
           <div class="d-grid gap-2">
             <CButton v-if="isLoading" disabled>
