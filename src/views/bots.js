@@ -163,10 +163,10 @@ const bots = [
     label: 'sicodice.com',
     value: `const DICE_SITE = 'sicodice';`,
   },
-  {
-    label: 'stake.com - crash',
-    value: `const DICE_SITE = 'stake-crash';`,
-  },
+  // {
+  //   label: 'stake.com - crash',
+  //   value: `const DICE_SITE = 'stake-crash';`,
+  // },
   {
     label: 'stake.com - dice',
     value: `const DICE_SITE = 'stake-dice';`,
