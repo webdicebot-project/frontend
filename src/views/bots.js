@@ -160,6 +160,10 @@ const bots = [
     value: `const DICE_SITE = 'primedice';`,
   },
   {
+    label: 'primedice.com (use on emulator)',
+    value: `const DICE_SITE = 'primedice-emulator';`,
+  },
+  {
     label: 'sicodice.com',
     value: `const DICE_SITE = 'sicodice';`,
   },
