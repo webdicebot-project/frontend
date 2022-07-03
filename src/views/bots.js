@@ -156,12 +156,12 @@ const bots = [
     value: `const DICE_SITE = 'pasino-limbo';`,
   },
   {
-    label: 'primedice.com',
-    value: `const DICE_SITE = 'primedice';`,
-  },
-  {
     label: 'primedice.com (use on emulator)',
     value: `const DICE_SITE = 'primedice-emulator';`,
+  },
+  {
+    label: 'primedice.com',
+    value: `const DICE_SITE = 'primedice';`,
   },
   {
     label: 'sicodice.com',
