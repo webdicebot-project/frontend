@@ -98,6 +98,8 @@
                   <CIcon name="cil-external-link" />
                 </a>
               </div>
+
+              <p class="small">We does not accept TRX smart contracts</p>
             </div>
           </CCardBody>
         </CCard>
