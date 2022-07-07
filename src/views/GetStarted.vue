@@ -20,7 +20,7 @@
 
         <pre>
 1. You must know what is dice, dice bot, dice script
-2. You must know the Lua language (v5.3) or Javascript language for make dice script
+2. You must know the Lua 5.3 programming language or Javascript programming language for make dice script
 3. You must control your crypto currency in dice
 4. You must have license when use dice bot of WebDiceBot.Xyz
 5. A license can use for all account, all dice sites and all devices of you
@@ -122,6 +122,40 @@ sleep(n) : play bet after n seconds (only work at lua mode)
 log(m): log your m message to logs tab
 resettime() : reset run time</pre
         >
+      </CCardBody>
+    </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
+        <h4>FAQ</h4>
+
+        <CAccordion>
+          <CAccordionItem :item-key="1">
+            <CAccordionHeader> Why dice script not work? </CAccordionHeader>
+            <CAccordionBody>
+              Dice script must follow syntax of programming language. In Lua
+              mode, your script must follow syntax of Lua 5.3, read docments of
+              Lua 5.3 at:
+              <a href="https://lua.org/manual/5.3" target="_blank">
+                https://lua.org/manual/5.3
+              </a>
+            </CAccordionBody>
+          </CAccordionItem>
+          <CAccordionItem :item-key="2">
+            <CAccordionHeader>
+              Where I can get some nice dice script?
+            </CAccordionHeader>
+            <CAccordionBody>
+              See awesome scripts at:
+              <a
+                href="https://github.com/webdicebot-project/awesome-scripts"
+                target="_blank"
+              >
+                https://github.com/webdicebot-project/awesome-scripts
+              </a>
+            </CAccordionBody>
+          </CAccordionItem>
+        </CAccordion>
       </CCardBody>
     </CCard>
   </div>

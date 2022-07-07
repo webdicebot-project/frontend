@@ -96,7 +96,7 @@ export default {
         this.isLoading2 = false
         // console.log(data)
         localStorage.setItem('token', data.token)
-        this.notify('Welcome back')
+        this.notify('Welcome')
         if (data.token)
           setTimeout(() => {
             window.location.href = '/'
