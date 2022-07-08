@@ -16,7 +16,6 @@ import { onMounted, ref } from 'vue'
 import router from '@/router'
 
 export default {
-  name: 'AppBreadcrumb',
   setup() {
     const breadcrumbs = ref()
 

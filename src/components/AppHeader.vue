@@ -30,7 +30,6 @@
 import AppBreadcrumb from './AppBreadcrumb'
 
 export default {
-  name: 'AppHeader',
   components: {
     AppBreadcrumb,
   },

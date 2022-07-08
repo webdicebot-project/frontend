@@ -11,7 +11,7 @@
                 <p class="text-medium-emphasis">
                   Chat with
                   <a :href="$options.telebot" target="_blank"> Telegram Bot </a>
-                  to Get MemberID
+                  to get MemberID
                 </p>
 
                 <CInputGroup class="mb-3">

@@ -20,7 +20,6 @@ import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { AppSidebarNav } from './AppSidebarNav'
 export default {
-  name: 'AppSidebar',
   components: {
     AppSidebarNav,
   },

@@ -6,7 +6,7 @@ import DefaultLayout from '@/layouts/DefaultLayout'
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
+    name: 'Home',
     component: DefaultLayout,
     redirect: '/pages/home',
     children: [

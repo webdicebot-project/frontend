@@ -43,7 +43,6 @@ const isActiveItem = (route, item) => {
 }
 
 const AppSidebarNav = defineComponent({
-  name: 'AppSidebarNav',
   components: {
     CNavItem,
     CNavGroup,

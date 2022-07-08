@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="container-fuild text-center my-5">
+    <div class="container-fuild  my-5">
       <div class="container">
         <h3 class="py-5">
           <strong>Support sites</strong>
