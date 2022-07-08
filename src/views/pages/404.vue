@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <h1>Page not found!</h1>
-    Redirect to Get Started in {{ s }}s
+    Redirect to home page in {{ s }}s
   </div>
 </template>
 

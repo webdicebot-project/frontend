@@ -5,6 +5,12 @@ export default [
   },
   {
     component: 'CNavItem',
+    name: 'Web DiceBot',
+    to: '/pages/home',
+    icon: 'cil-home',
+  },
+  {
+    component: 'CNavItem',
     name: 'Get Started',
     to: '/get-started',
     icon: 'cil-book',

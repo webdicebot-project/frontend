@@ -10,7 +10,7 @@
 
                 <p class="text-medium-emphasis">
                   Chat with
-                  <a :href="urlTelegramBot" target="_blank"> Telegram Bot </a>
+                  <a :href="$options.telebot" target="_blank"> Telegram Bot </a>
                   to Get MemberID
                 </p>
 
@@ -55,19 +55,16 @@
 
 <script>
 import axios from 'axios'
+import telebot from '@/configs/telebot'
 
 export default {
-  name: 'Login',
+  telebot,
   data() {
     return {
       isLoading: false,
       isLoading2: false,
       idUser: '',
       otp: '',
-      urlTelegramBot:
-        process.env.NODE_ENV == 'development'
-          ? 'https://t.me/webdicebot_dev_bot'
-          : 'https://t.me/webdicebot_bot',
     }
   },
   methods: {

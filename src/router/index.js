@@ -8,7 +8,7 @@ const routes = [
     path: '/',
     name: 'Dashboard',
     component: DefaultLayout,
-    redirect: '/get-started',
+    redirect: '/pages/home',
     children: [
       {
         path: '/get-started',
@@ -57,6 +57,11 @@ const routes = [
       },
     },
     children: [
+      {
+        path: 'home',
+        name: 'Web DiceBot',
+        component: () => import('@/views/pages/Home'),
+      },
       {
         path: '404',
         name: 'Page not found!',

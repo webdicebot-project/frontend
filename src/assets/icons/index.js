@@ -1,4 +1,5 @@
 import {
+  cilHome,
   cilMenu,
   cilLockLocked,
   cilUser,
@@ -18,6 +19,7 @@ import {
 } from '@coreui/icons'
 
 export const iconsSet = Object.assign({
+  cilHome,
   cilMenu,
   cilLockLocked,
   cilUser,
