@@ -7,7 +7,7 @@
     "dev": "vue-cli-service serve",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "deploy": "git add . && git commit -m :rocket: && git push"
+    "push": "git add . && git commit -m :rocket: && git push"
   },
   "config": {
     "coreui_library_short_version": "4.1"
