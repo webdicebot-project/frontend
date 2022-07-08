@@ -34,22 +34,22 @@
 
         <CListGroup>
           <CListGroupItem>
-            <a href="https://jacksclub.webdicebot.xyz" target="_blank">
+            <a href="https://webdicebot-jacksclub.mhqb365.com" target="_blank">
               jacksclub.io
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://primedice.webdicebot.xyz" target="_blank">
+            <a href="https://webdicebot-primedice.mhqb365.com" target="_blank">
               primedice.com
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://stake.webdicebot.xyz" target="_blank">
+            <a href="https://webdicebot-stake.mhqb365.com" target="_blank">
               stake.com
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://wolf.webdicebot.xyz" target="_blank"> wolf.bet </a>
+            <a href="https://webdicebot-wolf.mhqb365.com" target="_blank"> wolf.bet </a>
           </CListGroupItem>
         </CListGroup>
 

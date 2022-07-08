@@ -133,9 +133,9 @@ resettime() : reset run time</pre
           <CAccordionItem :item-key="1">
             <CAccordionHeader> Why dice script not work? </CAccordionHeader>
             <CAccordionBody>
-              Dice script must follow syntax of programming language. In Lua
-              mode, your script must follow syntax of Lua 5.3, read docments of
-              Lua 5.3 at:
+              Dice script must clean and follow syntax of programming language. In
+              Lua mode, your script must follow syntax of Lua 5.3, read docments
+              of Lua 5.3 at:
               <a href="https://lua.org/manual/5.3" target="_blank">
                 https://lua.org/manual/5.3
               </a>
