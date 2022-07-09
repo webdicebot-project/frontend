@@ -167,14 +167,6 @@ const bots = [
     label: 'sicodice.com',
     value: `const DICE_SITE = 'sicodice';`,
   },
-  // {
-  //   label: 'stake.com - crash (use on emulator)',
-  //   value: `const DICE_SITE = 'stake-crash-emulator';`,
-  // },
-  // {
-  //   label: 'stake.com - crash',
-  //   value: `const DICE_SITE = 'stake-crash';`,
-  // },
   {
     label: 'stake.com - dice (use on emulator)',
     value: `const DICE_SITE = 'stake-dice-emulator';`,
@@ -190,6 +182,10 @@ const bots = [
   {
     label: 'stake.com - limbo',
     value: `const DICE_SITE = 'stake-limbo';`,
+  },
+  {
+    label: 'starbets - dice',
+    value: `const DICE_SITE = 'starbets-dice';`,
   },
   {
     label: 'windice.io - dice',
