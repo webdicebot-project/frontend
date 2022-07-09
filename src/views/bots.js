@@ -196,6 +196,10 @@ const bots = [
     value: `const DICE_SITE = 'wintomato-dice';`,
   },
   {
+    label: 'wolf.bet - dice (use on emulator)',
+    value: `const DICE_SITE = 'wolf-dice-emulator';`,
+  },
+  {
     label: 'wolf.bet - dice',
     value: `const DICE_SITE = 'wolf-dice';`,
   },
