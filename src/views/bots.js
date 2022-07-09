@@ -196,13 +196,13 @@ const bots = [
     value: `const DICE_SITE = 'wintomato-dice';`,
   },
   {
-    label: 'wolf.bet - dice (use on emulator)',
+    label: 'wolf.bet - dice',
     value: `const DICE_SITE = 'wolf-dice';`,
   },
-  // {
-  //   label: 'wolf.bet - limbo',
-  //   value: `const DICE_SITE = 'wolf-limbo';`,
-  // },
+  {
+    label: 'wolf.bet - limbo',
+    value: `const DICE_SITE = 'wolf-limbo';`,
+  },
 ]
 
 export default bots
