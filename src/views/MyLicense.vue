@@ -15,9 +15,10 @@
           <CTableBody>
             <span
               v-if="isLoading"
-              class="spinner-border text-secondary"
+              class="spinner-border text-secondary mt-2"
               role="status"
             ></span>
+
             <CTableRow v-else v-for="item in items" :key="item._id">
               <CTableDataCell>
                 {{

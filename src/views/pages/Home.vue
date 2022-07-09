@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="container-fuild  my-5">
+    <div class="container-fuild my-5">
       <div class="container">
         <h3 class="py-5">
           <strong>Support sites</strong>
@@ -427,7 +427,7 @@
           </a>
         </div>
         <div class="col-md-4 p-2">
-          <i class="fa-brands fa-github text-dark"></i>
+          <i class="fa-brands fa-github"></i>
           <a href="https://github.com/webdicebot-project" target="_blank">
             Github
           </a>
