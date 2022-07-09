@@ -3,11 +3,19 @@
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
         <div>
-          <h2>{{ wallet.balance }} TRX</h2>
-
-          <h6>
-            ${{ Number(wallet.balance * $store.state.priceTrx.usd).toFixed(2) }}
-          </h6>
+          <div class="balance">
+            <span
+              v-if="isLoading2"
+              class="spinner-border text-secondary"
+              role="status"
+            ></span>
+            <span v-else>
+              <h2>{{ wallet.balance }} TRX</h2>
+              ${{
+                Number(wallet.balance * $store.state.priceTrx.usd).toFixed(2)
+              }}
+            </span>
+          </div>
 
           <p class="mt-4 mb-0 small">
             <CBadge
@@ -21,9 +29,16 @@
               ?
             </CBadge>
             Bandwidth:
-            {{
-              wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed
-            }}/{{ wallet.bandwidth.freeNetLimit }}
+            <span
+              v-if="isLoading2"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            ></span>
+            <span v-else>
+              {{
+                wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed
+              }}/{{ wallet.bandwidth.freeNetLimit }}
+            </span>
           </p>
         </div>
       </CCardBody>
@@ -83,20 +98,27 @@
 
               <div class="mb-3">
                 <span
-                  class="copy"
-                  v-clipboard:copy="wallet.address"
-                  v-clipboard:success="onCopy"
-                >
-                  {{ getAddress(wallet.address) }}
-                  <CIcon name="cil-copy" />
+                  v-if="isLoading2"
+                  class="spinner-border spinner-border-sm text-secondary"
+                  role="status"
+                ></span>
+                <span v-else>
+                  <span
+                    class="copy"
+                    v-clipboard:copy="wallet.address"
+                    v-clipboard:success="onCopy"
+                  >
+                    {{ getAddress(wallet.address) }}
+                    <CIcon name="cil-copy" />
+                  </span>
+                  &nbsp;
+                  <a
+                    :href="$options.explorer + 'address/' + wallet.address"
+                    target="_blank"
+                  >
+                    <CIcon name="cil-external-link" />
+                  </a>
                 </span>
-                &nbsp;
-                <a
-                  :href="$options.explorer + 'address/' + wallet.address"
-                  target="_blank"
-                >
-                  <CIcon name="cil-external-link" />
-                </a>
               </div>
             </div>
           </CCardBody>
@@ -151,6 +173,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isLoading2: false,
       tabPaneActiveKey: 1,
       wallet: {
         address: '',
@@ -178,11 +201,14 @@ export default {
     },
     async getWallet() {
       try {
+        this.isLoading2 = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
         this.wallet = data
+        this.isLoading2 = false
       } catch (error) {
         // console.error(error)
+        this.isLoading2 = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -226,7 +252,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.balance {
+  min-height: 70px;
+}
 .tab-content {
   border-top: none;
   border-top-left-radius: 0;

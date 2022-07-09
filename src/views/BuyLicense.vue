@@ -14,7 +14,18 @@
             <CInputGroupText>TRX</CInputGroupText>
           </CInputGroup>
 
-          <p>Balance: {{ wallet.balance }} TRX</p>
+          <p>
+            Balance:
+            <span
+              v-if="isLoading2"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            ></span>
+            <span v-else>
+              {{ wallet.balance }}
+            </span>
+            TRX
+          </p>
 
           <div class="d-grid gap-2">
             <CButton v-if="isLoading" disabled>
@@ -35,6 +46,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isLoading2: false,
       wallet: {
         address: '',
         balance: 0,
@@ -71,11 +83,14 @@ export default {
   methods: {
     async getWallet() {
       try {
+        this.isLoading2 = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
         this.wallet = data
+        this.isLoading2 = false
       } catch (error) {
         // console.error(error)
+        this.isLoading2 = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

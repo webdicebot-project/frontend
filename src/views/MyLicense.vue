@@ -13,7 +13,12 @@
             </CTableRow>
           </CTableHead>
           <CTableBody>
-            <CTableRow v-for="item in items" :key="item._id">
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            ></span>
+            <CTableRow v-else v-for="item in items" :key="item._id">
               <CTableDataCell>
                 {{
                   $options.moment(item.createdAt).format('DD/MM/YYYY HH:mm:ss')
@@ -57,6 +62,7 @@ export default {
   moment,
   data() {
     return {
+      isLoading: false,
       items: [],
     }
   },
@@ -69,11 +75,14 @@ export default {
     },
     async getMyLicense() {
       try {
+        this.isLoading = true
         const { data } = await axios.get('/license/me')
         // console.log(data)
         this.items = data
+        this.isLoading = false
       } catch (error) {
         // console.error(error)
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

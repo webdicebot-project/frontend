@@ -4,14 +4,29 @@
       <CCardBody>
         <CListGroup>
           <CListGroupItem>
-            MemberID: {{ user.idUser }}
-            <CBadge color="secondary">
-              {{ getPermission(user.permission) }}
-            </CBadge>
+            MemberID:
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            ></span>
+            <span v-else>
+              {{ user.idUser }}
+              <CBadge color="secondary">
+                {{ getPermission(user.permission) }}
+              </CBadge>
+            </span>
           </CListGroupItem>
           <CListGroupItem>
             Join time:
-            {{ $options.moment(user.createdAt).format('DD/MM/YYYY') }}
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            ></span>
+            <span v-else>
+              {{ $options.moment(user.createdAt).format('DD/MM/YYYY') }}
+            </span>
           </CListGroupItem>
         </CListGroup>
       </CCardBody>
@@ -27,6 +42,7 @@ export default {
   moment,
   data() {
     return {
+      isLoading: false,
       user: {
         idUser: '',
         createdAt: Date.now(),
@@ -50,11 +66,14 @@ export default {
     },
     async getProfile() {
       try {
+        this.isLoading = true
         const { data } = await axios.get('/user/profile')
         // console.log(data)
         this.user = data
+        this.isLoading = false
       } catch (error) {
         // console.error(error)
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||

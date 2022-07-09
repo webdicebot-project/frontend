@@ -427,7 +427,7 @@
           </a>
         </div>
         <div class="col-md-4 p-2">
-          <i class="fa-brands fa-github text-white"></i>
+          <i class="fa-brands fa-github text-dark"></i>
           <a href="https://github.com/webdicebot-project" target="_blank">
             Github
           </a>
@@ -450,7 +450,7 @@ export default {
 <style scoped>
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css);
 
-.home {
+/* .home {
   background-color: #252525;
   color: #f0e7d5;
 }
@@ -470,5 +470,5 @@ export default {
 
 .col-md-4 > a {
   color: #f0e7d5;
-}
+} */
 </style>
