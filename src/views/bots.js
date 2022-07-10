@@ -109,10 +109,18 @@ const bots = [
   },
   {
     label: 'jacksclub.io - blaze (use on emulator)',
+    value: `const DICE_SITE = 'jacksclub-blaze-emulator';`,
+  },
+  {
+    label: 'jacksclub.io - blaze',
     value: `const DICE_SITE = 'jacksclub-blaze';`,
   },
   {
     label: 'jacksclub.io - dice (use on emulator)',
+    value: `const DICE_SITE = 'jacksclub-dice-emulator';`,
+  },
+  {
+    label: 'jacksclub.io - dice',
     value: `const DICE_SITE = 'jacksclub-dice';`,
   },
   {

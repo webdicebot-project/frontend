@@ -449,26 +449,4 @@ export default {
 
 <style scoped>
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css);
-
-/* .home {
-  background-color: #252525;
-  color: #f0e7d5;
-}
-
-.jumbotron {
-  background-color: #252525;
-}
-
-.list-group-item {
-  background-color: #252525;
-  border: none;
-}
-
-.list-group-item > a {
-  color: #f0e7d5;
-}
-
-.col-md-4 > a {
-  color: #f0e7d5;
-} */
 </style>
