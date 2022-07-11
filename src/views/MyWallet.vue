@@ -79,13 +79,13 @@
         <CCard class="tab-content">
           <CCardBody class="text-center">
             <div>
-              <p class="small">
+              <p>
                 Only send TRX to this address, 1 confirmation(s) required
                 <br />
                 We do not accept BEP20 from Binance
               </p>
 
-              <div class="mb-3" style="height: 200px">
+              <div class="mb-4" style="height: 200px">
                 <QRCodeVue3
                   :value="wallet.address"
                   :width="200"
@@ -96,7 +96,7 @@
                 />
               </div>
 
-              <div class="mb-3">
+              <div class="mb-4">
                 <span
                   v-if="isLoading2"
                   class="spinner-border spinner-border-sm text-secondary"
@@ -128,22 +128,32 @@
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 2">
         <CCard class="tab-content">
           <CCardBody>
-            <div class="mb-3">
-              <CFormLabel>Receiving address</CFormLabel>
-              <CFormInput type="text" v-model="to" />
+            <p>
+              If receiving address not activated. An extra 1.1 TRX will be
+              deducted from your account to activate the receiving address
+            </p>
+
+            <div class="mb-4">
+              <CFormInput
+                type="text"
+                placeholder="Receiving address"
+                v-model="to"
+              />
             </div>
 
-            <div class="mb-3">
-              <CFormLabel>Withdraw amount</CFormLabel>
-              <CFormInput type="number" v-model="amount" />
+            <div class="mb-4">
+              <CFormInput
+                type="number"
+                placeholder="Withdraw amount"
+                v-model="amount"
+              />
             </div>
 
-            <CFormLabel>OTP code</CFormLabel>
-            <CInputGroup class="mb-3">
+            <CInputGroup class="mb-4">
               <CInputGroupText>
                 <CIcon icon="cil-lock-locked" />
               </CInputGroupText>
-              <CFormInput v-model="otp" />
+              <CFormInput v-model="otp" placeholder="OTP code" />
               <CButton v-if="isLoading3" class="px-4" disabled>
                 <CSpinner size="sm" />
               </CButton>
@@ -159,11 +169,6 @@
 
               <CButton v-else color="primary" @click="send"> Send </CButton>
             </div>
-
-            <p class="mt-3 small">
-              If receiving address not activated. An extra 1.1 TRX will be
-              deducted from your account to activate the receiving address
-            </p>
           </CCardBody>
         </CCard>
       </CTabPane>
@@ -199,7 +204,7 @@ export default {
         },
       },
       to: '',
-      amount: '0',
+      amount: '',
       otp: '',
     }
   },
@@ -263,7 +268,7 @@ export default {
         this.isLoading = false
         this.notify(data)
         this.to = ''
-        this.amount = '0'
+        this.amount = ''
         this.otp = ''
       } catch (error) {
         // console.error(error)

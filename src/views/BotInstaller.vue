@@ -32,6 +32,11 @@
       <CCardBody>
         <h4>Emulator</h4>
 
+        <p>
+          Some dice sites not accept install bot direct (Content Security
+          Policy). Emulator is the place to install bot for them
+        </p>
+
         <CListGroup>
           <CListGroupItem>
             <a href="https://webdicebot-jacksclub.mhqb365.com" target="_blank">
@@ -49,14 +54,11 @@
             </a>
           </CListGroupItem>
           <CListGroupItem>
-            <a href="https://webdicebot-wolf.mhqb365.com" target="_blank"> wolf.bet </a>
+            <a href="https://webdicebot-wolf.mhqb365.com" target="_blank">
+              wolf.bet
+            </a>
           </CListGroupItem>
         </CListGroup>
-
-        <p class="mt-3 small">
-          Some dice sites not accept install bot direct (Content Security
-          Policy). Emulator is the place to install bot for them
-        </p>
       </CCardBody>
     </CCard>
   </div>

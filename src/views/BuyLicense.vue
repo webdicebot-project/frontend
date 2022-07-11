@@ -8,7 +8,7 @@
             <CFormInput type="number" v-model="limit" />
           </div>
 
-          <CFormLabel>Amount</CFormLabel>
+          <CFormLabel>Price</CFormLabel>
           <CInputGroup class="mb-3">
             <CFormInput v-model="price" disabled />
             <CInputGroupText>TRX</CInputGroupText>
