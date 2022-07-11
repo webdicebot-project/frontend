@@ -129,19 +129,28 @@
         <CCard class="tab-content">
           <CCardBody>
             <div class="mb-3">
-              <CFormLabel>To</CFormLabel>
+              <CFormLabel>Receiving address</CFormLabel>
               <CFormInput type="text" v-model="to" />
             </div>
 
-            <p class="small">
-              If receiving address not activated. An extra 1.1 TRX will be
-              deducted from your account to activate the receiving address
-            </p>
-
             <div class="mb-3">
-              <CFormLabel>Amount</CFormLabel>
+              <CFormLabel>Withdraw amount</CFormLabel>
               <CFormInput type="number" v-model="amount" />
             </div>
+
+            <CFormLabel>OTP code</CFormLabel>
+            <CInputGroup class="mb-3">
+              <CInputGroupText>
+                <CIcon icon="cil-lock-locked" />
+              </CInputGroupText>
+              <CFormInput v-model="otp" />
+              <CButton v-if="isLoading3" class="px-4" disabled>
+                <CSpinner size="sm" />
+              </CButton>
+              <CButton v-else color="success" @click="getOTP">
+                Get OTP
+              </CButton>
+            </CInputGroup>
 
             <div class="d-grid gap-2">
               <CButton v-if="isLoading" disabled>
@@ -150,6 +159,11 @@
 
               <CButton v-else color="primary" @click="send"> Send </CButton>
             </div>
+
+            <p class="mt-3 small">
+              If receiving address not activated. An extra 1.1 TRX will be
+              deducted from your account to activate the receiving address
+            </p>
           </CCardBody>
         </CCard>
       </CTabPane>
@@ -174,6 +188,7 @@ export default {
     return {
       isLoading: false,
       isLoading2: false,
+      isLoading3: false,
       tabPaneActiveKey: 1,
       wallet: {
         address: '',
@@ -185,6 +200,7 @@ export default {
       },
       to: '',
       amount: '0',
+      otp: '',
     }
   },
   created() {
@@ -220,20 +236,35 @@ export default {
         }
       }
     },
+    async getOTP() {
+      try {
+        this.isLoading3 = true
+        const { data } = await axios.get('/user/getOTPSend')
+        this.isLoading3 = false
+        // console.log(data)
+        this.notify(data)
+      } catch (error) {
+        this.isLoading3 = false
+        // console.error(error)
+        this.notify(error.response.data.message)
+      }
+    },
     async send() {
       try {
-        if (!this.to || !this.amount)
+        if (!this.to || !this.amount || !this.otp)
           return this.notify('Enter receiving address and amount')
         this.isLoading = true
         const { data } = await axios.post('/user/wallet/send', {
           to: this.to,
           amount: this.amount,
+          otp: this.otp,
         })
         // console.log(data)
         this.isLoading = false
         this.notify(data)
         this.to = ''
         this.amount = '0'
+        this.otp = ''
       } catch (error) {
         // console.error(error)
         this.isLoading = false
