@@ -162,7 +162,7 @@ resettime() : reset run time</pre
 </template>
 
 <script>
-import video from '@/assets/Video_2022-04-17_194842.mp4'
+import video from '@/assets/Video_2022-07-12_101052.mp4'
 
 export default {
   video,
