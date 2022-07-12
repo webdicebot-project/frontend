@@ -349,6 +349,16 @@
                 </a>
               </li>
               <li class="list-group-item">
+                <i class="fa-solid fa-globe text-success"></i>
+                <a
+                  href="https://starbets.io/ref=r3oaasMDgA"
+                  target="_blank"
+                  class="footer-link"
+                >
+                  starbets.io
+                </a>
+              </li>
+              <li class="list-group-item">
                 <i class="fa-solid fa-globe text-danger"></i>
                 <a
                   href="https://wixiplay.io"
