@@ -2,12 +2,11 @@
   <div class="vld-parent">
     <CCard class="mb-4">
       <CCardBody>
-        <loading :active="isLoading" background-color="#000" />
+        <loading :active="isLoading" />
 
         <CTable responsive>
           <CTableHead>
             <CTableRow>
-              <CTableHeaderCell scope="col">Time</CTableHeaderCell>
               <CTableHeaderCell scope="col">License</CTableHeaderCell>
               <CTableHeaderCell scope="col">Days</CTableHeaderCell>
               <CTableHeaderCell scope="col">Price</CTableHeaderCell>
@@ -17,11 +16,6 @@
           <CTableBody>
 
             <CTableRow v-for="item in items" :key="item._id">
-              <CTableDataCell>
-                {{
-                    $options.moment(item.createdAt).format('DD/MM/YYYY HH:mm:ss')
-                }}
-              </CTableDataCell>
               <CTableDataCell>
                 <span class="copy" v-clipboard:copy="item.license" v-clipboard:success="onCopy">
                   {{ getLicense(item.license) }}

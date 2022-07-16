@@ -1,7 +1,5 @@
 <template>
   <div class="home pt-5 vld-parent">
-    <loading :active="isLoading" background-color="#000" />
-
     <div class="jumbotron jumbotron-fluid text-center">
       <div class="container mb-5">
         <h2 class="text-warning">
@@ -312,23 +310,10 @@
 </template>
 
 <script>
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
 import photo from '@/assets/webdicebot.jpg'
 
 export default {
-  components: {
-    Loading
-  },
   photo,
-  data() {
-    return {
-      isLoading: true
-    }
-  },
-  mounted() {
-    this.isLoading = false
-  }
 }
 </script>
 

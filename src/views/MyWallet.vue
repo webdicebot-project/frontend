@@ -1,6 +1,6 @@
 <template>
   <div class="vld-parent">
-    <loading :active="isLoading" background-color="#000" />
+    <loading :active="isLoading" />
 
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>

@@ -1,10 +1,13 @@
 <template>
   <div class="vld-parent">
-    <loading :active="isLoading" background-color="#000" />
+    <loading :active="isLoading" />
 
     <CCard class="mb-3">
       <CListGroup flush>
-        <CListGroupItem>MemberID: {{ user.idUser }}</CListGroupItem>
+        <CListGroupItem>
+          <CIcon name="cil-user" />
+          MemberID: {{ user.idUser }}
+        </CListGroupItem>
         <!-- <CListGroupItem>
           <CBadge color="secondary">
             {{ getPermission(user.permission) }}
@@ -12,7 +15,8 @@
         </CListGroupItem> -->
       </CListGroup>
       <CCardFooter>
-        Join: {{ $options.moment(user.createdAt).fromNow() }}
+        <CIcon name="cil-history" />
+        Joined on: {{ $options.moment(user.createdAt).format('DD/MM/YYYY HH:mm:ss') }}
       </CCardFooter>
     </CCard>
   </div>
