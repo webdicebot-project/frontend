@@ -1,35 +1,19 @@
 <template>
-  <div>
-    <CCard class="mb-4">
-      <CCardBody>
-        <CListGroup>
-          <CListGroupItem>
-            MemberID:
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            ></span>
-            <span v-else>
-              {{ user.idUser }}
-              <CBadge color="secondary">
-                {{ getPermission(user.permission) }}
-              </CBadge>
-            </span>
-          </CListGroupItem>
-          <CListGroupItem>
-            Join time:
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            ></span>
-            <span v-else>
-              {{ $options.moment(user.createdAt).format('DD/MM/YYYY') }}
-            </span>
-          </CListGroupItem>
-        </CListGroup>
-      </CCardBody>
+  <div class="vld-parent">
+    <loading :active="isLoading" background-color="#000" />
+
+    <CCard class="mb-3">
+      <CListGroup flush>
+        <CListGroupItem>MemberID: {{ user.idUser }}</CListGroupItem>
+        <!-- <CListGroupItem>
+          <CBadge color="secondary">
+            {{ getPermission(user.permission) }}
+          </CBadge>
+        </CListGroupItem> -->
+      </CListGroup>
+      <CCardFooter>
+        Join: {{ $options.moment(user.createdAt).fromNow() }}
+      </CCardFooter>
     </CCard>
   </div>
 </template>
@@ -37,14 +21,19 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
   moment,
+  components: {
+    Loading
+  },
   data() {
     return {
       isLoading: false,
       user: {
-        idUser: '',
+        idUser: '0',
         createdAt: Date.now(),
         permission: 0,
       },
@@ -89,4 +78,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>

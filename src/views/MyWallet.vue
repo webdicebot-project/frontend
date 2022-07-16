@@ -1,42 +1,29 @@
 <template>
-  <div>
+  <div class="vld-parent">
+    <loading :active="isLoading" background-color="#000" />
+
     <CCard class="mb-4 bg-primary text-white">
       <CCardBody>
         <div>
           <div class="balance">
-            <span
-              v-if="isLoading2"
-              class="spinner-border text-secondary"
-              role="status"
-            ></span>
-            <span v-else>
+            <span>
               <h2>{{ wallet.balance }} TRX</h2>
               ${{
-                Number(wallet.balance * $store.state.priceTrx.usd).toFixed(2)
+                  Number(wallet.balance * $store.state.priceTrx.usd).toFixed(2)
               }}
             </span>
           </div>
 
           <p class="mt-4 mb-0 small">
-            <CBadge
-              color="light"
-              shape="rounded-pill"
-              v-c-tooltip="
-                'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
-              "
-              class="copy text-dark"
-            >
+            <CBadge color="light" shape="rounded-pill" v-c-tooltip="
+              'All transactions except for queries consume Bandwidth. Each account can get 1,500 Bandwidth a day for free'
+            " class="copy text-dark">
               ?
             </CBadge>
             Bandwidth:
-            <span
-              v-if="isLoading2"
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            ></span>
-            <span v-else>
+            <span>
               {{
-                wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed
+                  wallet.bandwidth.freeNetLimit - wallet.bandwidth.freeNetUsed
               }}/{{ wallet.bandwidth.freeNetLimit }}
             </span>
           </p>
@@ -46,29 +33,21 @@
 
     <CNav variant="tabs" role="tablist">
       <CNavItem>
-        <CNavLink
-          href="javascript:void(0);"
-          :active="tabPaneActiveKey === 1"
-          @click="
-            () => {
-              tabPaneActiveKey = 1
-            }
-          "
-        >
+        <CNavLink href="javascript:void(0);" :active="tabPaneActiveKey === 1" @click="
+          () => {
+            tabPaneActiveKey = 1
+          }
+        ">
           <CIcon name="cil-arrow-circle-bottom" size="lg" />
         </CNavLink>
       </CNavItem>
 
       <CNavItem>
-        <CNavLink
-          href="javascript:void(0);"
-          :active="tabPaneActiveKey === 2"
-          @click="
-            () => {
-              tabPaneActiveKey = 2
-            }
-          "
-        >
+        <CNavLink href="javascript:void(0);" :active="tabPaneActiveKey === 2" @click="
+          () => {
+            tabPaneActiveKey = 2
+          }
+        ">
           <CIcon name="cil-arrow-circle-top" size="lg" />
         </CNavLink>
       </CNavItem>
@@ -77,49 +56,28 @@
     <CTabContent class="mb-4">
       <CTabPane role="tabpanel" :visible="tabPaneActiveKey === 1">
         <CCard class="tab-content">
-          <CCardBody class="text-center">
-            <div>
-              <p>
-                Only send TRX to this address, 1 confirmation(s) required
-                <br />
-                We do not accept BEP20 from Binance
-              </p>
+          <CCardBody class="text-center pb-0">
+            <p>
+              Only send TRX to this address, 1 confirmation(s) required
+              <br />
+              We do not accept BEP20 from Binance
+            </p>
 
-              <div class="mb-4" style="height: 200px">
-                <QRCodeVue3
-                  :value="wallet.address"
-                  :width="200"
-                  :height="200"
-                  :dotsOptions="{
-                    type: 'square',
-                  }"
-                />
-              </div>
+            <div class="mb-4" style="height: 200px">
+              <QRCodeVue3 :value="wallet.address" :width="200" :height="200" :dotsOptions="{
+                type: 'square',
+              }" />
+            </div>
 
-              <div class="mb-4">
-                <span
-                  v-if="isLoading2"
-                  class="spinner-border spinner-border-sm text-secondary"
-                  role="status"
-                ></span>
-                <span v-else>
-                  <span
-                    class="copy"
-                    v-clipboard:copy="wallet.address"
-                    v-clipboard:success="onCopy"
-                  >
-                    {{ getAddress(wallet.address) }}
-                    <CIcon name="cil-copy" />
-                  </span>
-                  &nbsp;
-                  <a
-                    :href="$options.explorer + 'address/' + wallet.address"
-                    target="_blank"
-                  >
-                    <CIcon name="cil-external-link" />
-                  </a>
-                </span>
-              </div>
+            <div class="mb-4">
+              <span class="copy" v-clipboard:copy="wallet.address" v-clipboard:success="onCopy">
+                {{ getAddress(wallet.address) }}
+                <CIcon name="cil-copy" />
+              </span>
+              &nbsp;
+              <a :href="$options.explorer + 'address/' + wallet.address" target="_blank">
+                <CIcon name="cil-external-link" />
+              </a>
             </div>
           </CCardBody>
         </CCard>
@@ -134,19 +92,11 @@
             </p>
 
             <div class="mb-4">
-              <CFormInput
-                type="text"
-                placeholder="Receiving address"
-                v-model="to"
-              />
+              <CFormInput type="text" placeholder="Receiving address" v-model="to" />
             </div>
 
             <div class="mb-4">
-              <CFormInput
-                type="number"
-                placeholder="Withdraw amount"
-                v-model="amount"
-              />
+              <CFormInput type="number" placeholder="Withdraw amount" v-model="amount" />
             </div>
 
             <CInputGroup class="mb-4">
@@ -154,7 +104,7 @@
                 <CIcon icon="cil-lock-locked" />
               </CInputGroupText>
               <CFormInput v-model="otp" placeholder="OTP code" />
-              <CButton v-if="isLoading3" class="px-4" disabled>
+              <CButton v-if="isLoading2" class="px-4" disabled>
                 <CSpinner size="sm" />
               </CButton>
               <CButton v-else color="success" @click="getOTP">
@@ -163,11 +113,11 @@
             </CInputGroup>
 
             <div class="d-grid gap-2">
-              <CButton v-if="isLoading" disabled>
+              <CButton v-if="isLoading3" disabled>
                 <CSpinner size="sm" />
               </CButton>
 
-              <CButton v-else color="primary" @click="send"> Send </CButton>
+              <CButton v-else color="primary" @click="send"> Withdraw </CButton>
             </div>
           </CCardBody>
         </CCard>
@@ -182,10 +132,13 @@ import axios from 'axios'
 import QRCodeVue3 from 'qrcode-vue3'
 import moment from 'moment'
 import explorer from '@/configs/explorer'
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
   components: {
     QRCodeVue3,
+    Loading
   },
   moment,
   explorer,
@@ -210,10 +163,6 @@ export default {
   },
   created() {
     this.getWallet()
-
-    setTimeout(() => {
-      this.getWallet()
-    }, 6e4)
   },
   methods: {
     ...mapActions(['getPriceTrx']),
@@ -222,14 +171,14 @@ export default {
     },
     async getWallet() {
       try {
-        this.isLoading2 = true
+        this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
         this.wallet = data
-        this.isLoading2 = false
+        this.isLoading = false
       } catch (error) {
         // console.error(error)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -243,13 +192,13 @@ export default {
     },
     async getOTP() {
       try {
-        this.isLoading3 = true
+        this.isLoading2 = true
         const { data } = await axios.get('/user/getOTPSend')
-        this.isLoading3 = false
+        this.isLoading2 = false
         // console.log(data)
         this.notify(data)
       } catch (error) {
-        this.isLoading3 = false
+        this.isLoading2 = false
         // console.error(error)
         this.notify(error.response.data.message)
       }
@@ -257,22 +206,22 @@ export default {
     async send() {
       try {
         if (!this.to || !this.amount || !this.otp)
-          return this.notify('Enter receiving address and amount')
-        this.isLoading = true
+          return this.notify('Enter Receiving address and Withdraw amount')
+        this.isLoading3 = true
         const { data } = await axios.post('/user/wallet/send', {
           to: this.to,
           amount: this.amount,
           otp: this.otp,
         })
         // console.log(data)
-        this.isLoading = false
+        this.isLoading3 = false
         this.notify(data)
         this.to = ''
         this.amount = ''
         this.otp = ''
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
+        this.isLoading3 = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -292,6 +241,7 @@ export default {
 .balance {
   min-height: 70px;
 }
+
 .tab-content {
   border-top: none;
   border-top-left-radius: 0;

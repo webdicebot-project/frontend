@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="vld-parent">
+    <loading :active="isLoading" background-color="#000" />
+
     <CCard class="mb-4">
       <CCardBody>
         <div>
@@ -16,19 +18,12 @@
 
           <p>
             Balance:
-            <span
-              v-if="isLoading2"
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            ></span>
-            <span v-else>
-              {{ wallet.balance }}
-            </span>
+            {{ wallet.balance }}
             TRX
           </p>
 
           <div class="d-grid gap-2">
-            <CButton v-if="isLoading" disabled>
+            <CButton v-if="isLoading2" disabled>
               <CSpinner size="sm" />
             </CButton>
             <CButton v-else color="primary" @click="buy"> Buy </CButton>
@@ -41,8 +36,13 @@
 
 <script>
 import axios from 'axios'
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
+  components: {
+    Loading
+  },
   data() {
     return {
       isLoading: false,
@@ -83,14 +83,14 @@ export default {
   methods: {
     async getWallet() {
       try {
-        this.isLoading2 = true
+        this.isLoading = true
         const { data } = await axios.get('/user/wallet')
         // console.log(data)
         this.wallet = data
-        this.isLoading2 = false
+        this.isLoading = false
       } catch (error) {
         // console.error(error)
-        this.isLoading2 = false
+        this.isLoading = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -104,14 +104,14 @@ export default {
     },
     async buy() {
       try {
-        this.isLoading = true
+        this.isLoading2 = true
         const { data } = await axios.get('/license/buy?limit=' + this.limit)
         // console.log(data)
-        this.isLoading = false
+        this.isLoading2 = false
         this.notify(data)
       } catch (error) {
         // console.error(error)
-        this.isLoading = false
+        this.isLoading2 = false
         this.notify(error.response.data.message)
         if (
           error.response.data.message == 'jwt expired' ||
@@ -127,4 +127,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>
