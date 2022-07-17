@@ -21,7 +21,7 @@
 1. You must know what is dice, dice bot, dice script
 2. You must know the Lua 5.3 programming language or Javascript programming language for make dice script
 3. You must control your crypto currency in dice
-4. You must have license when use dice bot of WebDiceBot.Xyz
+4. You must have license when use dice bot of Web DiceBot
 5. A license can use for all account, all dice sites and all devices of you
 6. Security enhancement (strong password, 2FA, etc..) for your accounts at all dice sites
 7. Updating...</pre>

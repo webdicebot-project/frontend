@@ -9,12 +9,12 @@
       </div>
 
       <div class="container mb-5">
-        <img :src="$options.photo" alt="Web DiceBot" class="w-100 border border-secondary rounded" />
+        <img :src="$options.photo" alt="Web DiceBot" class="w-100 rounded shadow-lg" />
       </div>
 
       <div class="container">
         <router-link to="/get-started">
-          <button type="button" class="btn btn-warning btn-lg">
+          <button type="button" class="btn btn-warning btn-lg my-5">
             Get Started
           </button>
         </router-link>
@@ -276,7 +276,7 @@
 
     <div class="container text-center my-5">
       <router-link to="/get-started">
-        <button type="button" class="btn btn-warning btn-lg">
+        <button type="button" class="btn btn-warning btn-lg my-5">
           Get Started
         </button>
       </router-link>
