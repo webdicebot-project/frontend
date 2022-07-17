@@ -16,7 +16,7 @@
       </CListGroup>
       <CCardFooter>
         <CIcon name="cil-history" />
-        Joined at: {{ $options.moment(user.createdAt).format('DD/MM/YYYY HH:mm:ss') }}
+        Joined at: {{ $options.moment(user.createdAt).format('DD/MM/YYYY') }}
       </CCardFooter>
     </CCard>
   </div>

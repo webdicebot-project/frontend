@@ -13,9 +13,8 @@
 
         <p>
           The following user agreement is to read in its entirety prior to the
-          use of WebDiceBot.Xyz's products and services. The agreement
-          constitutes a legal binding between the user and all services found on
-          WebDiceBot.Xyz
+          use of Web DiceBot's products and services. The agreement
+          constitutes a legal binding between the user and all our services
         </p>
 
         <pre>
@@ -25,8 +24,7 @@
 4. You must have license when use dice bot of WebDiceBot.Xyz
 5. A license can use for all account, all dice sites and all devices of you
 6. Security enhancement (strong password, 2FA, etc..) for your accounts at all dice sites
-7. Updating...</pre
-        >
+7. Updating...</pre>
       </CCardBody>
     </CCard>
 
@@ -48,8 +46,7 @@ function dobet()
     else
         nextbet=previousbet*2
     end
-end</pre
-            >
+end</pre>
           </CCardBody>
         </CCard>
       </CCol>
@@ -71,8 +68,7 @@ function dobet() {
     } else {
         nextbet=previousbet*2
     }
-}</pre
-            >
+}</pre>
           </CCardBody>
         </CCard>
       </CCol>
@@ -90,8 +86,8 @@ balance : current balance
 profit : total profit in round
 currentprofit, lastBet.profit : profit of last bet make
 previousbet, lastBet.amount : amount of last bet make
-lastBet.nonce : nonce of bets (some dice sites not have)
-lastBet.id : id of bets (some dice sites not have)
+lastBet.nonce : nonce of bets (some sites not have)
+lastBet.id : id of bets (some sites not have)
 lastBet.chance : win chance of last bet make
 lastBet.roll : result number of last bet make
 win : true is last bet make has win, false is lose
@@ -100,8 +96,7 @@ wins : win count
 winstreak  : streak of win count
 losses : lose count
 losestreak : streak of lose count
-currentstreak : streak of bet count</pre
-        >
+currentstreak : streak of bet count</pre>
       </CCardBody>
     </CCard>
 
@@ -113,15 +108,13 @@ currentstreak : streak of bet count</pre
 dobet() : loop betting
 start() : start betting
 stop() : stop betting
-continuebet() : continue betting after call function stop()
+continuebet() : continue betting after stop()
 resetseed() : reset seed fair
 resetstats() : reset stats in round
 ching() : alert with sound
 checkbalance() : check current balance if new deposit
 sleep(n) : play bet after n seconds (only work at lua mode)
-log(m): log your m message to logs tab
-resettime() : reset run time</pre
-        >
+resettime() : reset run time</pre>
       </CCardBody>
     </CCard>
 
@@ -147,10 +140,7 @@ resettime() : reset run time</pre
             </CAccordionHeader>
             <CAccordionBody>
               See awesome scripts at:
-              <a
-                href="https://github.com/webdicebot-project/awesome-scripts"
-                target="_blank"
-              >
+              <a href="https://github.com/webdicebot-project/awesome-scripts" target="_blank">
                 https://github.com/webdicebot-project/awesome-scripts
               </a>
             </CAccordionBody>
@@ -177,4 +167,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>

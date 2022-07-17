@@ -24,6 +24,10 @@ const bots = [
     value: `const DICE_SITE = 'betfury-limbo';`,
   },
   {
+    label: 'betfury.io - space dice',
+    value: `const DICE_SITE = 'betfury-space-dice';`,
+  },
+  {
     label: 'bit555.io - classic dice',
     value: `const DICE_SITE = 'bit555-classic-dice';`,
   },
