@@ -13,8 +13,8 @@
 
         <p>
           The following user agreement is to read in its entirety prior to the
-          use of Web DiceBot's products and services. The agreement
-          constitutes a legal binding between the user and all our services
+          use of Web DiceBot's products and services. The agreement constitutes
+          a legal binding between the user and all our services
         </p>
 
         <pre>
@@ -24,7 +24,8 @@
 4. You must have license when use dice bot of Web DiceBot
 5. A license can use for all account, all dice sites and all devices of you
 6. Security enhancement (strong password, 2FA, etc..) for your accounts at all dice sites
-7. Updating...</pre>
+7. Updating...</pre
+        >
       </CCardBody>
     </CCard>
 
@@ -46,7 +47,8 @@ function dobet()
     else
         nextbet=previousbet*2
     end
-end</pre>
+end</pre
+            >
           </CCardBody>
         </CCard>
       </CCol>
@@ -68,7 +70,8 @@ function dobet() {
     } else {
         nextbet=previousbet*2
     }
-}</pre>
+}</pre
+            >
           </CCardBody>
         </CCard>
       </CCol>
@@ -96,7 +99,8 @@ wins : win count
 winstreak  : streak of win count
 losses : lose count
 losestreak : streak of lose count
-currentstreak : streak of bet count</pre>
+currentstreak : streak of bet count</pre
+        >
       </CCardBody>
     </CCard>
 
@@ -114,7 +118,8 @@ resetstats() : reset stats in round
 ching() : alert with sound
 checkbalance() : check current balance if new deposit
 sleep(n) : play bet after n seconds (only work at lua mode)
-resettime() : reset run time</pre>
+resettime() : reset run time</pre
+        >
       </CCardBody>
     </CCard>
 
@@ -126,9 +131,9 @@ resettime() : reset run time</pre>
           <CAccordionItem :item-key="1">
             <CAccordionHeader> Why dice script not work? </CAccordionHeader>
             <CAccordionBody>
-              Dice script must clean and follow syntax of programming language. In
-              Lua mode, your script must follow syntax of Lua 5.3, read docments
-              of Lua 5.3 at:
+              Dice script must clean and follow syntax of programming language.
+              In Lua mode, your script must follow syntax of Lua 5.3, read
+              docments of Lua 5.3 at:
               <a href="https://lua.org/manual/5.3" target="_blank">
                 https://lua.org/manual/5.3
               </a>
@@ -140,7 +145,10 @@ resettime() : reset run time</pre>
             </CAccordionHeader>
             <CAccordionBody>
               See awesome scripts at:
-              <a href="https://github.com/webdicebot-project/awesome-scripts" target="_blank">
+              <a
+                href="https://github.com/webdicebot-project/awesome-scripts"
+                target="_blank"
+              >
                 https://github.com/webdicebot-project/awesome-scripts
               </a>
             </CAccordionBody>
@@ -167,5 +175,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

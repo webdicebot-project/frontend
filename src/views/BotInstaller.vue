@@ -5,7 +5,11 @@
         <h4>Installer</h4>
 
         <div class="mb-3">
-          <CFormSelect aria-label="Default select example" :options="bots" @change="changeBot" />
+          <CFormSelect
+            aria-label="Default select example"
+            :options="bots"
+            @change="changeBot"
+          />
         </div>
 
         <div class="mb-3">
@@ -13,7 +17,11 @@
         </div>
 
         <div class="d-grid gap-2">
-          <CButton color="primary" v-clipboard:copy="installer" v-clipboard:success="onCopy">
+          <CButton
+            color="primary"
+            v-clipboard:copy="installer"
+            v-clipboard:success="onCopy"
+          >
             Copy
           </CButton>
         </div>
@@ -25,8 +33,9 @@
         <h4>Emulator</h4>
 
         <p>
-          Run bots directly on dice sites that are prone to crash, or content security policies do not allow bots to be
-          installed directly on them. Emulator is da best choose
+          Run bots directly on dice sites that are prone to crash, or content
+          security policies do not allow bots to be installed directly on them.
+          Emulator is da best choose
         </p>
 
         <CListGroup>
@@ -82,5 +91,4 @@ await fetch(BOT_API + '/bot/init')
 }
 </script>
 
-<style>
-</style>
+<style></style>

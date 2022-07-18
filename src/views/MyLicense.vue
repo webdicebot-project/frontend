@@ -14,10 +14,13 @@
             </CTableRow>
           </CTableHead>
           <CTableBody>
-
             <CTableRow v-for="item in items" :key="item._id">
               <CTableDataCell>
-                <span class="copy" v-clipboard:copy="item.license" v-clipboard:success="onCopy">
+                <span
+                  class="copy"
+                  v-clipboard:copy="item.license"
+                  v-clipboard:success="onCopy"
+                >
                   {{ getLicense(item.license) }}
                   <CIcon name="cil-copy" />
                 </span>
@@ -28,10 +31,10 @@
               </CTableDataCell>
               <CTableDataCell>
                 {{
-                    $options
-                      .moment(item.createdAt)
-                      .add(item.limit, 'day')
-                      .format('DD/MM/YYYY HH:mm:ss')
+                  $options
+                    .moment(item.createdAt)
+                    .add(item.limit, 'day')
+                    .format('DD/MM/YYYY HH:mm:ss')
                 }}
               </CTableDataCell>
             </CTableRow>
@@ -45,13 +48,13 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
   moment,
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
@@ -91,5 +94,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

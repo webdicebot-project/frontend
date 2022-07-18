@@ -25,13 +25,13 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
   moment,
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
@@ -82,5 +82,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
