@@ -27,41 +27,6 @@
         </div>
       </CCardBody>
     </CCard>
-
-    <CCard class="mb-4">
-      <CCardBody>
-        <h4>Emulator</h4>
-
-        <p>
-          Run bots directly on dice sites that are prone to crash, or content
-          security policies do not allow bots to be installed directly on them.
-          Emulator is da best choose
-        </p>
-
-        <CListGroup>
-          <CListGroupItem>
-            <a href="https://webdicebot-jacksclub.mhqb365.com" target="_blank">
-              jacksclub.io
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a href="https://webdicebot-primedice.mhqb365.com" target="_blank">
-              primedice.com
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a href="https://webdicebot-stake.mhqb365.com" target="_blank">
-              stake.com
-            </a>
-          </CListGroupItem>
-          <CListGroupItem>
-            <a href="https://webdicebot-wolf.mhqb365.com" target="_blank">
-              wolf.bet
-            </a>
-          </CListGroupItem>
-        </CListGroup>
-      </CCardBody>
-    </CCard>
   </div>
 </template>
 

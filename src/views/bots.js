@@ -112,16 +112,8 @@ const bots = [
     value: `const DICE_SITE = 'freebitco';`,
   },
   {
-    label: 'jacksclub.io - blaze (use on emulator)',
-    value: `const DICE_SITE = 'jacksclub-blaze-emulator';`,
-  },
-  {
     label: 'jacksclub.io - blaze',
     value: `const DICE_SITE = 'jacksclub-blaze';`,
-  },
-  {
-    label: 'jacksclub.io - dice (use on emulator)',
-    value: `const DICE_SITE = 'jacksclub-dice-emulator';`,
   },
   {
     label: 'jacksclub.io - dice',
@@ -168,10 +160,6 @@ const bots = [
     value: `const DICE_SITE = 'pasino-limbo';`,
   },
   {
-    label: 'primedice.com (use on emulator)',
-    value: `const DICE_SITE = 'primedice-emulator';`,
-  },
-  {
     label: 'primedice.com',
     value: `const DICE_SITE = 'primedice';`,
   },
@@ -180,16 +168,8 @@ const bots = [
     value: `const DICE_SITE = 'sicodice';`,
   },
   {
-    label: 'stake.com - dice (use on emulator)',
-    value: `const DICE_SITE = 'stake-dice-emulator';`,
-  },
-  {
     label: 'stake.com - dice',
     value: `const DICE_SITE = 'stake-dice';`,
-  },
-  {
-    label: 'stake.com - limbo (use on emulator)',
-    value: `const DICE_SITE = 'stake-limbo-emulator';`,
   },
   {
     label: 'stake.com - limbo',
@@ -206,10 +186,6 @@ const bots = [
   {
     label: 'wintomato.com - dice',
     value: `const DICE_SITE = 'wintomato-dice';`,
-  },
-  {
-    label: 'wolf.bet - dice (use on emulator)',
-    value: `const DICE_SITE = 'wolf-dice-emulator';`,
   },
   {
     label: 'wolf.bet - dice',

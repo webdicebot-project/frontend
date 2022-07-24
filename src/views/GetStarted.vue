@@ -118,6 +118,7 @@ resetstats() : reset stats in round
 ching() : alert with sound
 checkbalance() : check current balance if new deposit
 sleep(n) : play bet after n seconds (only work at lua mode)
+log(message) : log a message
 resettime() : reset run time</pre
         >
       </CCardBody>
