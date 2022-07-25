@@ -117,8 +117,8 @@ resetseed() : reset seed fair
 resetstats() : reset stats in round
 ching() : alert with sound
 checkbalance() : check current balance if new deposit
-sleep(n) : play bet after n seconds (only work at lua mode)
-log(message) : log a message
+sleep(x) : play bet after x seconds (only work at lua mode)
+log(message) : log a message to log box
 resettime() : reset run time</pre
         >
       </CCardBody>
