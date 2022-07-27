@@ -444,7 +444,9 @@
         </div>
       </div>
 
-      <p>Web DiceBot © 2019 - 2022</p>
+      <p>
+        Web DiceBot / Since 2019
+      </p>
     </div>
   </div>
 </template>
