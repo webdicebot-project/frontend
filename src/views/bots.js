@@ -73,7 +73,7 @@ const bots = [
   },
   {
     label: 'cryptoplay.io - dice classic',
-    value: `const DICE_SITE = 'cryptoplay-dice';`,
+    value: `const DICE_SITE = 'cryptoplay-dice-classic';`,
   },
   {
     label: 'cryptoplay.io - limbo',
