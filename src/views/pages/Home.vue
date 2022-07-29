@@ -11,8 +11,8 @@
       <div class="container mb-5">
         <img
           :src="$options.photo"
-          alt="Web DiceBot"
-          class="w-100 rounded shadow-lg"
+          alt="Web DiceBot Interface"
+          class="w-100 shadow-lg"
         />
       </div>
 
