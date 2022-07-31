@@ -2,14 +2,14 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>How to use?</h4>
+        <h4 class="text-warning">How to use?</h4>
         <video class="w-100" :src="$options.video" controls></video>
       </CCardBody>
     </CCard>
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Terms of use</h4>
+        <h4 class="text-warning">Terms of use</h4>
 
         <p>
           The following user agreement is to read in its entirety prior to the
@@ -33,7 +33,7 @@
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Lua script</h4>
+            <h4 class="text-warning">Lua script</h4>
 
             <pre>
 chance=49.5
@@ -56,7 +56,7 @@ end</pre
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4>Javascript script</h4>
+            <h4 class="text-warning">Javascript script</h4>
 
             <pre>
 chance=49.5
@@ -79,7 +79,7 @@ function dobet() {
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>System variables</h4>
+        <h4 class="text-warning">System variables</h4>
 
         <pre>
 chance : % win change
@@ -106,7 +106,7 @@ currentstreak : streak of bet count</pre
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>System functions</h4>
+        <h4 class="text-warning">System functions</h4>
 
         <pre>
 dobet() : loop betting
@@ -126,7 +126,7 @@ resettime() : reset run time</pre
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4>FAQ</h4>
+        <h4 class="text-warning">FAQ</h4>
 
         <CAccordion>
           <CAccordionItem :item-key="1">

@@ -2,8 +2,6 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4>Installer</h4>
-
         <div class="mb-3">
           <CFormSelect
             aria-label="Default select example"
