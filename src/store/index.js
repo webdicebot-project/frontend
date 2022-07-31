@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-import jwt_decode from 'jwt-decode'
 
 export default createStore({
   state: {
