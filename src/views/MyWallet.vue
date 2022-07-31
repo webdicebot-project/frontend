@@ -81,6 +81,9 @@
                 :value="wallet.address"
                 :width="200"
                 :height="200"
+                :cornersSquareOptions="{
+                  type: 'square',
+                }"
                 :dotsOptions="{
                   type: 'square',
                 }"
