@@ -2,14 +2,18 @@
   <div>
     <CCard class="mb-4">
       <CCardBody>
-        <h4 class="text-warning">How to use?</h4>
+        <h4>
+          <strong>How to use? </strong>
+        </h4>
         <video class="w-100" :src="$options.video" controls></video>
       </CCardBody>
     </CCard>
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4 class="text-warning">Terms of use</h4>
+        <h4>
+          <strong>Terms of use </strong>
+        </h4>
 
         <p>
           The following user agreement is to read in its entirety prior to the
@@ -33,7 +37,9 @@
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4 class="text-warning">Lua script</h4>
+            <h4>
+              <strong>Lua script </strong>
+            </h4>
 
             <pre>
 chance=49.5
@@ -56,7 +62,9 @@ end</pre
       <CCol md="6">
         <CCard class="mb-4">
           <CCardBody>
-            <h4 class="text-warning">Javascript script</h4>
+            <h4>
+              <strong>Javascript script </strong>
+            </h4>
 
             <pre>
 chance=49.5
@@ -79,7 +87,9 @@ function dobet() {
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4 class="text-warning">System variables</h4>
+        <h4>
+          <strong>System variables</strong>
+        </h4>
 
         <pre>
 chance : % win change
@@ -106,7 +116,9 @@ currentstreak : streak of bet count</pre
 
     <CCard class="mb-4">
       <CCardBody>
-        <h4 class="text-warning">System functions</h4>
+        <h4>
+          <strong> System functions </strong>
+        </h4>
 
         <pre>
 dobet() : loop betting
@@ -121,40 +133,6 @@ sleep(x) : play bet after x seconds (only work at lua mode)
 log(message) : log a message to log box
 resettime() : reset run time</pre
         >
-      </CCardBody>
-    </CCard>
-
-    <CCard class="mb-4">
-      <CCardBody>
-        <h4 class="text-warning">FAQ</h4>
-
-        <CAccordion>
-          <CAccordionItem :item-key="1">
-            <CAccordionHeader> Why dice script not work? </CAccordionHeader>
-            <CAccordionBody>
-              Dice script must clean and follow syntax of programming language.
-              In Lua mode, your script must follow syntax of Lua 5.3, read
-              docments of Lua 5.3 at:
-              <a href="https://lua.org/manual/5.3" target="_blank">
-                https://lua.org/manual/5.3
-              </a>
-            </CAccordionBody>
-          </CAccordionItem>
-          <CAccordionItem :item-key="2">
-            <CAccordionHeader>
-              Where I can get some nice dice script?
-            </CAccordionHeader>
-            <CAccordionBody>
-              See awesome scripts at:
-              <a
-                href="https://github.com/webdicebot-project/awesome-scripts"
-                target="_blank"
-              >
-                https://github.com/webdicebot-project/awesome-scripts
-              </a>
-            </CAccordionBody>
-          </CAccordionItem>
-        </CAccordion>
       </CCardBody>
     </CCard>
   </div>

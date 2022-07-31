@@ -25,6 +25,42 @@
         </div>
       </CCardBody>
     </CCard>
+
+    <CCard class="mb-4">
+      <CCardBody>
+        <h4>
+          <strong>FAQ</strong>
+        </h4>
+
+        <CAccordion>
+          <CAccordionItem :item-key="1">
+            <CAccordionHeader> Why dice script not work? </CAccordionHeader>
+            <CAccordionBody>
+              Dice script must clean and follow syntax of programming language.
+              In Lua mode, your script must follow syntax of Lua 5.3, read
+              docments of Lua 5.3 at:
+              <a href="https://lua.org/manual/5.3" target="_blank">
+                https://lua.org/manual/5.3
+              </a>
+            </CAccordionBody>
+          </CAccordionItem>
+          <CAccordionItem :item-key="2">
+            <CAccordionHeader>
+              Where I can get some nice dice script?
+            </CAccordionHeader>
+            <CAccordionBody>
+              See awesome scripts at:
+              <a
+                href="https://github.com/webdicebot-project/awesome-scripts"
+                target="_blank"
+              >
+                https://github.com/webdicebot-project/awesome-scripts
+              </a>
+            </CAccordionBody>
+          </CAccordionItem>
+        </CAccordion>
+      </CCardBody>
+    </CCard>
   </div>
 </template>
 
