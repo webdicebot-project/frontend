@@ -7,11 +7,12 @@ import { mapActions } from 'vuex'
 
 export default {
   async created() {
+    this.getPermission()
     this.getPriceTrx()
     setInterval(this.getPriceTrx, 6e4)
   },
   methods: {
-    ...mapActions(['getPriceTrx']),
+    ...mapActions(['getPriceTrx', 'getPermission']),
   },
 }
 </script>
@@ -28,7 +29,8 @@ a {
   text-decoration: none;
 }
 
-.copy {
+.copy,
+.button {
   cursor: pointer;
 }
 </style>

@@ -9,6 +9,7 @@ import {
   CNavTitle,
 } from '@coreui/vue'
 import nav from '@/_nav.js'
+import store from '@/store'
 
 const normalizePath = (path) =>
   decodeURI(path)
@@ -132,7 +133,12 @@ const AppSidebarNav = defineComponent({
         CSidebarNav,
         {},
         {
-          default: () => nav.map((item) => renderItem(item)),
+          default: () =>
+            nav.map((item) =>
+              store.state.permission >= item.permission
+                ? renderItem(item)
+                : null,
+            ),
         },
       )
   },

@@ -45,6 +45,25 @@ const routes = [
         meta: { requiresAuth: true },
         component: () => import('@/views/Profile.vue'),
       },
+      // admin features
+      {
+        path: '/user-manager',
+        name: 'User Manager',
+        meta: { requiresAuth: true },
+        component: () => import('@/views/admin/UserManager.vue'),
+      },
+      {
+        path: '/license-manager',
+        name: 'License Manager',
+        meta: { requiresAuth: true },
+        component: () => import('@/views/admin/LicenseManager.vue'),
+      },
+      {
+        path: '/send-notify',
+        name: 'Send Notify',
+        meta: { requiresAuth: true },
+        component: () => import('@/views/admin/SendNotify.vue'),
+      },
     ],
   },
   {
